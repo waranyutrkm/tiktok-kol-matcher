@@ -1,0 +1,11 @@
+# Core (needed for the web UI)
+streamlit>=1.36
+pandas>=2.0
+pytest>=8.0
+
+# Live mode (optional — only needed when DEMO_MODE=0)
+requests>=2.31
+beautifulsoup4>=4.12
+python-dotenv>=1.0
+apify-client>=1.7
+openai>=1.30

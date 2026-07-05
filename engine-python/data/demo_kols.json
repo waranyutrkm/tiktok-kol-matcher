@@ -1,0 +1,463 @@
+[
+  {
+    "username": "beautybowljidapa",
+    "url": "https://www.tiktok.com/@beautybowljidapa",
+    "nickname": "Beauty Bowl | Skincare Review",
+    "bio": "Skincare, cosmetics, sensitive-skin routines, transparent product reviews, and beauty education.",
+    "region": "TH",
+    "language": "th",
+    "categories": [
+      "beauty",
+      "skincare",
+      "cosmetics"
+    ],
+    "followers": 412000,
+    "avg_views": 185000,
+    "avg_likes": 21000,
+    "avg_comments": 640,
+    "avg_shares": 890,
+    "video_count": 1240,
+    "verified": true,
+    "recent_hashtags": [
+      "#skincareReview",
+      "#sensitiveSkin",
+      "#cosmetics",
+      "#beautytiktok"
+    ],
+    "roles": [
+      "reviewer",
+      "educator"
+    ],
+    "commerce": {
+      "affiliate": true,
+      "live_host": true,
+      "shop": true
+    },
+    "is_public": true,
+    "last_post_days": 2,
+    "data_confidence": "estimated"
+  },
+  {
+    "username": "cleanbeautymild",
+    "url": "https://www.tiktok.com/@cleanbeautymild",
+    "nickname": "Clean Beauty Mild",
+    "bio": "Clean beauty, gentle skincare, ingredient education, minimalist routines, and practical product comparisons.",
+    "region": "TH",
+    "language": "th",
+    "categories": [
+      "beauty",
+      "skincare",
+      "wellness"
+    ],
+    "followers": 86000,
+    "avg_views": 52000,
+    "avg_likes": 6200,
+    "avg_comments": 240,
+    "avg_shares": 410,
+    "video_count": 380,
+    "verified": false,
+    "recent_hashtags": [
+      "#cleanBeauty",
+      "#skincareRoutine",
+      "#gentleSkincare"
+    ],
+    "roles": [
+      "reviewer",
+      "educator"
+    ],
+    "commerce": {
+      "affiliate": true,
+      "live_host": false,
+      "shop": true
+    },
+    "is_public": true,
+    "last_post_days": 4,
+    "data_confidence": "estimated"
+  },
+  {
+    "username": "foodiemhee",
+    "url": "https://www.tiktok.com/@foodiemhee",
+    "nickname": "Foodie Mhee | Street Food",
+    "bio": "Bangkok food discovery, restaurant reviews, cafe visits, street-food stories, and dining recommendations.",
+    "region": "TH",
+    "language": "th",
+    "categories": [
+      "food",
+      "restaurant",
+      "cafe",
+      "lifestyle"
+    ],
+    "followers": 980000,
+    "avg_views": 520000,
+    "avg_likes": 58000,
+    "avg_comments": 1200,
+    "avg_shares": 4300,
+    "video_count": 860,
+    "verified": true,
+    "recent_hashtags": [
+      "#foodReview",
+      "#BangkokFood",
+      "#cafeReview",
+      "#streetfood"
+    ],
+    "roles": [
+      "reviewer",
+      "lifestyle"
+    ],
+    "commerce": {
+      "affiliate": true,
+      "live_host": false,
+      "shop": false
+    },
+    "is_public": true,
+    "last_post_days": 1,
+    "data_confidence": "estimated"
+  },
+  {
+    "username": "techsanook",
+    "url": "https://www.tiktok.com/@techsanook",
+    "nickname": "Tech Sanook | Gadget Review",
+    "bio": "Smartphone reviews, gadgets, practical tech tips, laptop comparisons, and easy technology explainers.",
+    "region": "TH",
+    "language": "th",
+    "categories": [
+      "tech",
+      "gadget",
+      "smartphone",
+      "review"
+    ],
+    "followers": 305000,
+    "avg_views": 142000,
+    "avg_likes": 9800,
+    "avg_comments": 410,
+    "avg_shares": 520,
+    "video_count": 640,
+    "verified": false,
+    "recent_hashtags": [
+      "#phoneReview",
+      "#gadgetReview",
+      "#technology",
+      "#techtok"
+    ],
+    "roles": [
+      "reviewer",
+      "educator"
+    ],
+    "commerce": {
+      "affiliate": true,
+      "live_host": false,
+      "shop": true
+    },
+    "is_public": true,
+    "last_post_days": 5,
+    "data_confidence": "estimated"
+  },
+  {
+    "username": "momlovekids",
+    "url": "https://www.tiktok.com/@momlovekids",
+    "nickname": "Mom Love Kids",
+    "bio": "Parenting creator sharing family routines, baby products, child-friendly food, and practical household reviews.",
+    "region": "TH",
+    "language": "th",
+    "categories": [
+      "parenting",
+      "kids",
+      "family",
+      "lifestyle"
+    ],
+    "followers": 220000,
+    "avg_views": 98000,
+    "avg_likes": 12000,
+    "avg_comments": 780,
+    "avg_shares": 1500,
+    "video_count": 520,
+    "verified": false,
+    "recent_hashtags": [
+      "#parenting",
+      "#babyProducts",
+      "#familyLife",
+      "#momtok"
+    ],
+    "roles": [
+      "reviewer",
+      "community"
+    ],
+    "commerce": {
+      "affiliate": true,
+      "live_host": false,
+      "shop": true
+    },
+    "is_public": true,
+    "last_post_days": 9,
+    "data_confidence": "estimated"
+  },
+  {
+    "username": "fitfirmnan",
+    "url": "https://www.tiktok.com/@fitfirmnan",
+    "nickname": "Fit Firm Nan | Fitness Coach",
+    "bio": "Fitness coaching, sustainable weight loss, clean eating, protein supplements, and health routines.",
+    "region": "TH",
+    "language": "th",
+    "categories": [
+      "fitness",
+      "health",
+      "wellness",
+      "supplement"
+    ],
+    "followers": 540000,
+    "avg_views": 240000,
+    "avg_likes": 31000,
+    "avg_comments": 900,
+    "avg_shares": 2600,
+    "video_count": 710,
+    "verified": true,
+    "recent_hashtags": [
+      "#fitness",
+      "#weightLoss",
+      "#cleanEating",
+      "#fittok"
+    ],
+    "roles": [
+      "educator",
+      "expert"
+    ],
+    "commerce": {
+      "affiliate": true,
+      "live_host": false,
+      "shop": true
+    },
+    "is_public": true,
+    "last_post_days": 3,
+    "data_confidence": "estimated"
+  },
+  {
+    "username": "styleploy",
+    "url": "https://www.tiktok.com/@styleploy",
+    "nickname": "Style Ploy | OOTD",
+    "bio": "Affordable fashion, outfit ideas, shopping hauls, minimalist styling, and accessible trend inspiration.",
+    "region": "TH",
+    "language": "th",
+    "categories": [
+      "fashion",
+      "ootd",
+      "shopping",
+      "lifestyle"
+    ],
+    "followers": 675000,
+    "avg_views": 310000,
+    "avg_likes": 42000,
+    "avg_comments": 1100,
+    "avg_shares": 3800,
+    "video_count": 930,
+    "verified": true,
+    "recent_hashtags": [
+      "#ootd",
+      "#fashion",
+      "#styleTips",
+      "#shoppingHaul"
+    ],
+    "roles": [
+      "reviewer",
+      "lifestyle"
+    ],
+    "commerce": {
+      "affiliate": true,
+      "live_host": true,
+      "shop": true
+    },
+    "is_public": true,
+    "last_post_days": 2,
+    "data_confidence": "estimated"
+  },
+  {
+    "username": "gadgetgeekttp",
+    "url": "https://www.tiktok.com/@gadgetgeekttp",
+    "nickname": "Gadget Geek TTP",
+    "bio": "Laptop reviews, computer setups, work-from-home gear, desk accessories, and productivity tools.",
+    "region": "TH",
+    "language": "th",
+    "categories": [
+      "tech",
+      "gadget",
+      "computer",
+      "productivity"
+    ],
+    "followers": 158000,
+    "avg_views": 72000,
+    "avg_likes": 5400,
+    "avg_comments": 260,
+    "avg_shares": 340,
+    "video_count": 410,
+    "verified": false,
+    "recent_hashtags": [
+      "#laptopReview",
+      "#deskSetup",
+      "#itreview",
+      "#productivity"
+    ],
+    "roles": [
+      "reviewer",
+      "expert"
+    ],
+    "commerce": {
+      "affiliate": true,
+      "live_host": false,
+      "shop": true
+    },
+    "is_public": true,
+    "last_post_days": 60,
+    "data_confidence": "estimated"
+  },
+  {
+    "username": "travelgorn",
+    "url": "https://www.tiktok.com/@travelgorn",
+    "nickname": "Travel Gorn",
+    "bio": "Travel stories, hotel reviews, weekend trip ideas, destination guides, and lifestyle inspiration.",
+    "region": "TH",
+    "language": "th",
+    "categories": [
+      "travel",
+      "hotel",
+      "lifestyle"
+    ],
+    "followers": 740000,
+    "avg_views": 360000,
+    "avg_likes": 39000,
+    "avg_comments": 820,
+    "avg_shares": 3000,
+    "video_count": 610,
+    "verified": true,
+    "recent_hashtags": [
+      "#travel",
+      "#hotelReview",
+      "#weekendTrip",
+      "#travelTok"
+    ],
+    "roles": [
+      "storyteller",
+      "lifestyle"
+    ],
+    "commerce": {
+      "affiliate": false,
+      "live_host": false,
+      "shop": false
+    },
+    "is_public": true,
+    "last_post_days": 6,
+    "data_confidence": "estimated"
+  },
+  {
+    "username": "moneymentorja",
+    "url": "https://www.tiktok.com/@moneymentorja",
+    "nickname": "Money Mentor JA",
+    "bio": "Personal finance education, saving habits, investment basics, budgeting frameworks, and practical money tips.",
+    "region": "TH",
+    "language": "th",
+    "categories": [
+      "finance",
+      "investing",
+      "education"
+    ],
+    "followers": 190000,
+    "avg_views": 85000,
+    "avg_likes": 6700,
+    "avg_comments": 390,
+    "avg_shares": 980,
+    "video_count": 450,
+    "verified": false,
+    "recent_hashtags": [
+      "#personalFinance",
+      "#savingTips",
+      "#investingBasics"
+    ],
+    "roles": [
+      "educator",
+      "expert"
+    ],
+    "commerce": {
+      "affiliate": false,
+      "live_host": false,
+      "shop": false
+    },
+    "is_public": true,
+    "last_post_days": 8,
+    "data_confidence": "estimated"
+  },
+  {
+    "username": "homeprettyroom",
+    "url": "https://www.tiktok.com/@homeprettyroom",
+    "nickname": "Home Pretty Room",
+    "bio": "Home decor, small-space organization, furniture finds, condo styling, and practical room makeover ideas.",
+    "region": "TH",
+    "language": "th",
+    "categories": [
+      "home",
+      "decor",
+      "furniture",
+      "lifestyle"
+    ],
+    "followers": 128000,
+    "avg_views": 61000,
+    "avg_likes": 5900,
+    "avg_comments": 210,
+    "avg_shares": 740,
+    "video_count": 390,
+    "verified": false,
+    "recent_hashtags": [
+      "#homeDecor",
+      "#roomMakeover",
+      "#furnitureFinds"
+    ],
+    "roles": [
+      "reviewer",
+      "lifestyle"
+    ],
+    "commerce": {
+      "affiliate": true,
+      "live_host": false,
+      "shop": true
+    },
+    "is_public": true,
+    "last_post_days": 10,
+    "data_confidence": "estimated"
+  },
+  {
+    "username": "petdailyclub",
+    "url": "https://www.tiktok.com/@petdailyclub",
+    "nickname": "Pet Daily Club",
+    "bio": "Pet care, dog and cat food reviews, grooming routines, playful pet stories, and owner education.",
+    "region": "TH",
+    "language": "th",
+    "categories": [
+      "pet",
+      "dog",
+      "cat",
+      "lifestyle"
+    ],
+    "followers": 260000,
+    "avg_views": 130000,
+    "avg_likes": 16500,
+    "avg_comments": 520,
+    "avg_shares": 1600,
+    "video_count": 590,
+    "verified": false,
+    "recent_hashtags": [
+      "#petCare",
+      "#dogTok",
+      "#catTok",
+      "#petFoodReview"
+    ],
+    "roles": [
+      "community",
+      "reviewer"
+    ],
+    "commerce": {
+      "affiliate": true,
+      "live_host": false,
+      "shop": true
+    },
+    "is_public": true,
+    "last_post_days": 4,
+    "data_confidence": "estimated"
+  }
+]
