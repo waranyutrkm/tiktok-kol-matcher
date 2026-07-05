@@ -179,7 +179,59 @@ function render(list){
 }
 function card(c,i){return `<div class="kol"><div class="koltop"><div><h3>${i+1}. <a href="${c.url}" target="_blank">@${c.u}</a></h3><p class="small">${c.n} - ${c.followers.toLocaleString()} followers - ${c.er}% ER</p><p>${c.bio}</p><div class="tags">${c.commerce.map(x=>`<span class="tag">${x}</span>`).join("")}<span class="tag">${c.roles.join(" / ")}</span></div></div><div><div class="score">${c.score}</div><div class="small">match score</div></div></div><div class="bars">${Object.entries(c.subs).map(([k,v])=>`<div><div class="barlabel"><span>${k}</span><span>${v}</span></div><div class="bar"><span style="width:${v}%"></span></div></div>`).join("")}</div><p class="small" style="margin-top:12px">Rationale: strong category fit, platform-aware content style alignment, solid engagement quality, and a role mix that supports the selected objective. Final creator selection should still go through human review.</p></div>`;}
 function planner(list){const top=list.slice(0,5);return `<h3 style="margin-top:16px">Suggested creator mix</h3><div class="grid2">${["Awareness","Trust building","Review burst","Conversion","Live commerce"].map((b,i)=>`<div class="kol"><h3>${b}</h3><p>${top[i]?`<a href="${top[i].url}" target="_blank">@${top[i].u}</a> - ${top[i].roles.join(", ")}`:"Expand the creator pool for this role."}</p></div>`).join("")}</div>`;}
-function industry(list){return `<h3 style="margin-top:16px">Platform context analysis</h3><div class="grid2"><div class="kol"><h3>What to extract per platform</h3><p class="small">Website positioning, Facebook community tone, YouTube scripts, TikTok scene hooks, Instagram visual codes, and X conversation risk.</p></div><div class="kol"><h3>How it affects KOL matching</h3><p class="small">Creator recommendations should favor people whose native storytelling format matches the platform context that matters most for the campaign.</p></div></div>`;}
+function analysisRole(platformId){
+  const roles = {
+    webUrl: "Use this to understand the offer, product claims, proof points, price logic, and conversion promise before choosing any creator.",
+    facebookUrl: "Use this to understand community trust, objections, comment language, review themes, and whether the brand needs credibility-first creators.",
+    youtubeUrl: "Use this to understand long-form education depth, script structure, chapters, objections, and creators who can explain rather than only entertain.",
+    tiktokUrl: "Use this to understand native short-form hooks, scene pacing, captions, creator language, CTA rhythm, and conversion-ready KOL formats.",
+    instagramUrl: "Use this to understand visual identity, lifestyle framing, reel formats, story highlights, and creators whose aesthetic fits the brand.",
+    xUrl: "Use this to understand concise positioning, fast-moving conversation, direct feedback, and potential controversy or sentiment risk."
+  };
+  return roles[platformId] || "Use this source as an additional brand-context signal.";
+}
+function analysisExtraction(platformId){
+  const extraction = {
+    webUrl: ["Page title and meta promise", "Product/category pages", "Price and offer framing", "Claims and proof points", "Conversion CTAs"],
+    facebookUrl: ["Long-copy post angles", "Comment themes", "Review language", "Community objections", "Local trust signals"],
+    youtubeUrl: ["Video transcripts", "Chapter structure", "Retention hooks", "Teaching depth", "Long-form objections"],
+    tiktokUrl: ["Opening hooks", "Scene-by-scene beats", "Captions and overlays", "CTA rhythm", "Creator-native phrasing"],
+    instagramUrl: ["Reels formats", "Visual codes", "Story highlights", "Lifestyle frames", "Social proof assets"],
+    xUrl: ["Topic velocity", "Opinion framing", "Reply risk", "Concise message tests", "Sentiment shifts"]
+  };
+  return extraction[platformId] || ["Posts", "Captions", "Comments", "Engagement signals", "Narrative patterns"];
+}
+function recommendedCreatorRole(platformId, list){
+  const roleByPlatform = {
+    webUrl: ["educator", "expert", "reviewer"],
+    facebookUrl: ["community", "reviewer", "educator"],
+    youtubeUrl: ["educator", "expert", "reviewer"],
+    tiktokUrl: ["reviewer", "affiliate", "live_host", "storyteller"],
+    instagramUrl: ["lifestyle", "reviewer", "storyteller"],
+    xUrl: ["expert", "educator", "community"]
+  };
+  const preferred = roleByPlatform[platformId] || [];
+  const match = list.find(c => c.roles.some(r => preferred.includes(r)) || c.commerce.some(r => preferred.includes(r))) || list[0];
+  return match ? `<a href="${match.url}" target="_blank">@${match.u}</a> - ${match.roles.join(", ")}` : "Expand the creator pool for this platform.";
+}
+function industry(list){
+  const ctx = getPlatformContext();
+  if (!ctx.length) {
+    return `<h3 style="margin-top:16px">Platform context analysis</h3><div class="kol"><h3>No platform URLs entered</h3><p class="small">Add Website, Facebook, YouTube, TikTok, Instagram, or X links in Client Input. This tab will then show what the research layer should extract from each channel before recommending a KOL team.</p></div>`;
+  }
+  return `<h3 style="margin-top:16px">Platform context analysis</h3>
+    <p class="small">Each platform is analyzed separately first. The system should extract scripts, transcripts, captions, comments, scene beats, CTAs, and engagement patterns before synthesizing a final creator recommendation.</p>
+    <div class="grid2">
+      ${ctx.map(p => `<div class="kol">
+        <h3>${p.name}</h3>
+        <p class="small"><strong>URL:</strong> ${p.url}</p>
+        <p>${analysisRole(p.id)}</p>
+        <div class="tags">${analysisExtraction(p.id).map(x => `<span class="tag">${x}</span>`).join("")}</div>
+        <p class="small" style="margin-top:10px"><strong>Suggested creator role:</strong> ${recommendedCreatorRole(p.id, list)}</p>
+      </div>`).join("")}
+    </div>
+    <div class="note">Production flow: collect platform content -> transcribe video/audio -> split into scenes -> classify hooks, objections, proof, CTA, and sentiment -> match creator storytelling style to the channel that matters most for the campaign.</div>`;
+}
 function showMode(id,btn){["quick","planner","industry"].forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id));document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));btn.classList.add("active");}
 </script>
 </body>
