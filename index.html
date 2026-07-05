@@ -12,7 +12,7 @@
   }
   *{box-sizing:border-box}
   body{margin:0;background:linear-gradient(180deg,#edf2ff,#f8fbff);color:var(--ink);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.55}
-  .wrap{max-width:1120px;margin:0 auto;padding:24px 16px 56px}
+  .wrap{max-width:1160px;margin:0 auto;padding:24px 16px 56px}
   .brand{display:flex;align-items:center;gap:12px;margin-bottom:16px}
   .logo{width:44px;height:44px;border-radius:14px;background:var(--brand);display:grid;place-items:center;color:white;font-weight:900}
   .wordmark{font-size:24px;font-weight:800;color:var(--brand)}
@@ -21,7 +21,8 @@
   p{margin:6px 0}.muted{color:var(--muted)}
   .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center}
   .badge{display:inline-flex;align-items:center;border:1px solid #cfe0ff;background:var(--soft);color:var(--brand2);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700}
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
   label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}
   input,textarea,select{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 12px;font:inherit;background:#fbfdff;color:var(--ink)}
   textarea{min-height:96px;resize:vertical}
@@ -39,8 +40,11 @@
   .bars{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:12px}.barlabel{display:flex;justify-content:space-between;font-size:13px;font-weight:700}
   .bar{height:7px;background:#edf1f7;border-radius:999px;overflow:hidden}.bar span{display:block;height:100%;background:linear-gradient(90deg,#5b82ff,#1B4DFF)}
   .note{background:#fff8e9;border:1px solid #f0dfba;color:#745018;border-radius:12px;padding:13px;margin-top:14px}
+  .context{background:#f7faff;border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:14px}
+  .context-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+  .context-item{border:1px solid #dce5f5;background:white;border-radius:12px;padding:10px}
   .hidden{display:none}
-  @media(max-width:800px){.hero,.grid,.grid2,.kpis,.bars{grid-template-columns:1fr}.score{text-align:left}}
+  @media(max-width:900px){.hero,.grid,.grid2,.kpis,.bars,.platform-grid,.context-list{grid-template-columns:1fr}.score{text-align:left}}
 </style>
 </head>
 <body>
@@ -51,22 +55,23 @@
     <div>
       <span class="badge">Open creator discovery prototype</span>
       <h1>TikTok KOL Matcher</h1>
-      <p class="muted">A working prototype that analyzes a client brief, ranks relevant TikTok creators, and produces an explainable influencer shortlist for campaign planning.</p>
+      <p class="muted">A platform-aware prototype that reads a brand across web, Facebook, YouTube, TikTok, Instagram, and X before recommending an explainable KOL team.</p>
       <div class="btnrow">
         <button class="btn primary" onclick="runDemo()">Run skincare demo</button>
         <button class="btn ghost" onclick="scrollToForm()">Enter custom brief</button>
       </div>
     </div>
     <div class="kpis">
+      <div class="kpi"><div class="num">6</div><div class="lab">Brand channels</div></div>
       <div class="kpi"><div class="num">7</div><div class="lab">Scoring factors</div></div>
       <div class="kpi"><div class="num">12</div><div class="lab">Demo creators</div></div>
-      <div class="kpi"><div class="num">3</div><div class="lab">Product modes</div></div>
       <div class="kpi"><div class="num">17</div><div class="lab">Engine tests</div></div>
     </div>
   </section>
 
   <section class="card" id="form">
     <h2>1. Client Input</h2>
+    <p class="muted">Add every available brand channel. The system keeps platform context separate because a message that works on Facebook may not work on TikTok, YouTube, Instagram, or X.</p>
     <div class="grid">
       <div><label>Brand category</label><select id="category">
         <option value="beauty">Beauty / skincare</option><option value="food">Food / cafe</option>
@@ -77,8 +82,16 @@
         <option value="awareness">Awareness</option><option value="engagement">Engagement</option>
         <option value="leads">Leads / trust</option><option value="sales">Sales / conversion</option>
       </select></div>
-      <div><label>Website or Facebook URL</label><input id="url" placeholder="https://brand.com or Facebook page URL" /></div>
     </div>
+    <div class="platform-grid">
+      <div><label>Website</label><input id="webUrl" placeholder="https://brand.com" /></div>
+      <div><label>Facebook</label><input id="facebookUrl" placeholder="https://facebook.com/brand" /></div>
+      <div><label>YouTube</label><input id="youtubeUrl" placeholder="https://youtube.com/@brand" /></div>
+      <div><label>TikTok</label><input id="tiktokUrl" placeholder="https://tiktok.com/@brand" /></div>
+      <div><label>Instagram</label><input id="instagramUrl" placeholder="https://instagram.com/brand" /></div>
+      <div><label>X</label><input id="xUrl" placeholder="https://x.com/brand" /></div>
+    </div>
+    <div class="note">Production research layer: pull platform-specific posts, video scripts, transcripts, captions, comments, scene beats, CTAs, and engagement patterns before recommending creator roles.</div>
     <div style="margin-top:14px"><label>Brand brief</label><textarea id="brief" placeholder="Describe the client brand, audience, product, price point, campaign goal, and tone."></textarea></div>
     <div class="btnrow"><button class="btn primary" onclick="matchCreators()">Find matching KOLs</button><button class="btn ghost" onclick="runDemo()">Use sample brief</button></div>
   </section>
@@ -87,14 +100,15 @@
     <h2>2. Results</h2>
     <div class="kpis">
       <div class="kpi"><div class="num" id="scanCount">12</div><div class="lab">Creators scanned</div></div>
+      <div class="kpi"><div class="num" id="platformCount">0</div><div class="lab">Brand channels</div></div>
       <div class="kpi"><div class="num" id="eligibleCount">0</div><div class="lab">Eligible creators</div></div>
       <div class="kpi"><div class="num" id="topScore">0</div><div class="lab">Top match score</div></div>
-      <div class="kpi"><div class="num" id="estReach">0</div><div class="lab">Estimated reach</div></div>
     </div>
+    <div id="contextBox" class="context"></div>
     <div class="tabs" style="margin-top:16px">
       <button class="tab active" onclick="showMode('quick',this)">Quick Match</button>
       <button class="tab" onclick="showMode('planner',this)">Campaign Planner</button>
-      <button class="tab" onclick="showMode('industry',this)">Industry Analysis</button>
+      <button class="tab" onclick="showMode('industry',this)">Platform Analysis</button>
     </div>
     <div id="quick"></div>
     <div id="planner" class="hidden"></div>
@@ -115,30 +129,57 @@ const creators = [
   {u:"travelgorn", n:"Travel Gorn", cat:["travel","lifestyle"], roles:["storyteller","lifestyle"], followers:740000, views:360000, er:10.3, commerce:[], safety:85, url:"https://www.tiktok.com/@travelgorn", bio:"Travel storyteller covering hotels, weekend trips, and destination inspiration."}
 ];
 const related = {beauty:["beauty","skincare","wellness","fashion"], food:["food","cafe","lifestyle"], tech:["tech","gadget"], fashion:["fashion","lifestyle","beauty"], fitness:["fitness","health","wellness"], parenting:["parenting","family","lifestyle"]};
+const platforms = [
+  ["webUrl","Website","Positioning, product pages, SEO promise, pricing, proof points"],
+  ["facebookUrl","Facebook","Community tone, long-copy storytelling, comments, local trust"],
+  ["youtubeUrl","YouTube","Long-form scripts, chapters, retention hooks, education depth"],
+  ["tiktokUrl","TikTok","Short-form hooks, scene beats, creator-native language, CTA rhythm"],
+  ["instagramUrl","Instagram","Visual identity, reels, story highlights, lifestyle framing"],
+  ["xUrl","X","Real-time opinions, concise messaging, topics, controversy risk"]
+];
 function scrollToForm(){document.getElementById("form").scrollIntoView({behavior:"smooth"});}
-function runDemo(){document.getElementById("category").value="beauty";document.getElementById("objective").value="sales";document.getElementById("brief").value="A clean skincare brand for sensitive-skin consumers aged 18-35. The campaign objective is to build trust and drive conversion through product reviews, education, affiliate links, and live commerce.";matchCreators();}
+function getPlatformContext(){return platforms.map(([id,name,signal])=>({id,name,signal,url:document.getElementById(id).value.trim()})).filter(p=>p.url);}
+function runDemo(){
+  document.getElementById("category").value="beauty";
+  document.getElementById("objective").value="sales";
+  document.getElementById("webUrl").value="https://example.com/skincare";
+  document.getElementById("facebookUrl").value="https://facebook.com/example-skincare";
+  document.getElementById("youtubeUrl").value="https://youtube.com/@example-skincare";
+  document.getElementById("tiktokUrl").value="https://tiktok.com/@example-skincare";
+  document.getElementById("instagramUrl").value="https://instagram.com/example-skincare";
+  document.getElementById("xUrl").value="https://x.com/example-skincare";
+  document.getElementById("brief").value="A clean skincare brand for sensitive-skin consumers aged 18-35. The campaign objective is to build trust and drive conversion through product reviews, education, affiliate links, and live commerce.";
+  matchCreators();
+}
 function score(c){
-  const cat=document.getElementById("category").value, obj=document.getElementById("objective").value;
+  const cat=document.getElementById("category").value, obj=document.getElementById("objective").value, ctx=getPlatformContext();
   const rel=c.cat.some(x=>x===cat)?100:c.cat.some(x=>(related[cat]||[]).includes(x))?62:30;
   const aud=88; const perf=Math.min(100, Math.round(c.er/15*100)); const safety=c.safety;
   const commerce=c.commerce.length?95:obj==="sales"?20:65;
   const objective=obj==="sales"?(c.commerce.length?92:25):obj==="leads"?(c.roles.includes("educator")||c.roles.includes("expert")?92:62):obj==="engagement"?perf:Math.min(95,Math.round(c.views/6000));
-  const style=c.roles.includes("reviewer")||c.roles.includes("educator")?86:70;
+  const platformFit=Math.min(100, 68 + ctx.length * 5 + (ctx.some(p=>p.id==="tiktokUrl") ? 7 : 0));
+  const style=Math.round((c.roles.includes("reviewer")||c.roles.includes("educator")?86:70)*0.75 + platformFit*0.25);
   const total=Math.round(rel*.25+aud*.20+objective*.20+style*.15+perf*.10+commerce*.05+safety*.05);
   return {...c, score:total, subs:{Relevance:rel,Audience:aud,Objective:objective,Style:style,Performance:perf,Commerce:commerce,Safety:safety}};
 }
 function matchCreators(){const ranked=creators.map(score).filter(c=>!(document.getElementById("objective").value==="sales"&&c.commerce.length===0)).sort((a,b)=>b.score-a.score);render(ranked);}
+function renderContext(){
+  const ctx=getPlatformContext();
+  document.getElementById("platformCount").textContent=ctx.length;
+  document.getElementById("contextBox").innerHTML = `<h3>Platform-aware brand research layer</h3><p class="small">Before recommending a KOL team, production research should ingest each channel separately, pull scripts/transcripts/captions/comments, break video into scene beats, and compare storytelling patterns against creator-native formats.</p><div class="context-list">${ctx.length?ctx.map(p=>`<div class="context-item"><strong>${p.name}</strong><p class="small">${p.signal}</p></div>`).join(""):`<div class="context-item"><strong>No platform URLs yet</strong><p class="small">Add channels to improve context separation.</p></div>`}</div>`;
+}
 function render(list){
   document.getElementById("results").classList.remove("hidden");
-  document.getElementById("eligibleCount").textContent=list.length;document.getElementById("topScore").textContent=list[0]?.score||0;document.getElementById("estReach").textContent=list.reduce((a,c)=>a+c.views,0).toLocaleString();
+  document.getElementById("eligibleCount").textContent=list.length;document.getElementById("topScore").textContent=list[0]?.score||0;
+  renderContext();
   document.getElementById("quick").innerHTML=list.map((c,i)=>card(c,i)).join("");
   document.getElementById("planner").innerHTML=planner(list);
   document.getElementById("industry").innerHTML=industry(list);
   document.getElementById("results").scrollIntoView({behavior:"smooth"});
 }
-function card(c,i){return `<div class="kol"><div class="koltop"><div><h3>${i+1}. <a href="${c.url}" target="_blank">@${c.u}</a></h3><p class="small">${c.n} - ${c.followers.toLocaleString()} followers - ${c.er}% ER</p><p>${c.bio}</p><div class="tags">${c.commerce.map(x=>`<span class="tag">${x}</span>`).join("")}<span class="tag">${c.roles.join(" / ")}</span></div></div><div><div class="score">${c.score}</div><div class="small">match score</div></div></div><div class="bars">${Object.entries(c.subs).map(([k,v])=>`<div><div class="barlabel"><span>${k}</span><span>${v}</span></div><div class="bar"><span style="width:${v}%"></span></div></div>`).join("")}</div><p class="small" style="margin-top:12px">Rationale: strong category fit, solid engagement quality, and a role mix that supports the selected objective. Final creator selection should still go through human review.</p></div>`;}
+function card(c,i){return `<div class="kol"><div class="koltop"><div><h3>${i+1}. <a href="${c.url}" target="_blank">@${c.u}</a></h3><p class="small">${c.n} - ${c.followers.toLocaleString()} followers - ${c.er}% ER</p><p>${c.bio}</p><div class="tags">${c.commerce.map(x=>`<span class="tag">${x}</span>`).join("")}<span class="tag">${c.roles.join(" / ")}</span></div></div><div><div class="score">${c.score}</div><div class="small">match score</div></div></div><div class="bars">${Object.entries(c.subs).map(([k,v])=>`<div><div class="barlabel"><span>${k}</span><span>${v}</span></div><div class="bar"><span style="width:${v}%"></span></div></div>`).join("")}</div><p class="small" style="margin-top:12px">Rationale: strong category fit, platform-aware content style alignment, solid engagement quality, and a role mix that supports the selected objective. Final creator selection should still go through human review.</p></div>`;}
 function planner(list){const top=list.slice(0,5);return `<h3 style="margin-top:16px">Suggested creator mix</h3><div class="grid2">${["Awareness","Trust building","Review burst","Conversion","Live commerce"].map((b,i)=>`<div class="kol"><h3>${b}</h3><p>${top[i]?`<a href="${top[i].url}" target="_blank">@${top[i].u}</a> - ${top[i].roles.join(", ")}`:"Expand the creator pool for this role."}</p></div>`).join("")}</div>`;}
-function industry(list){return `<h3 style="margin-top:16px">Industry signal view</h3><div class="grid2"><div class="kol"><h3>Best for conversion</h3><p>${list.filter(c=>c.commerce.length).slice(0,3).map(c=>"@"+c.u).join(", ")}</p></div><div class="kol"><h3>Best for trust</h3><p>${list.filter(c=>c.roles.includes("educator")||c.roles.includes("expert")).slice(0,3).map(c=>"@"+c.u).join(", ")}</p></div></div>`;}
+function industry(list){return `<h3 style="margin-top:16px">Platform context analysis</h3><div class="grid2"><div class="kol"><h3>What to extract per platform</h3><p class="small">Website positioning, Facebook community tone, YouTube scripts, TikTok scene hooks, Instagram visual codes, and X conversation risk.</p></div><div class="kol"><h3>How it affects KOL matching</h3><p class="small">Creator recommendations should favor people whose native storytelling format matches the platform context that matters most for the campaign.</p></div></div>`;}
 function showMode(id,btn){["quick","planner","industry"].forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id));document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));btn.classList.add("active");}
 </script>
 </body>

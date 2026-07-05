@@ -9,7 +9,7 @@ from src.pipeline import run_matching
 st.set_page_config(page_title="TikTok KOL Matcher", page_icon="KM", layout="wide")
 
 st.title("TikTok KOL Matcher")
-st.caption("Generic creator discovery and campaign planning prototype")
+st.caption("Generic platform-aware creator discovery and campaign planning prototype")
 
 mode_badge = "DEMO mode: bundled synthetic data" if config.DEMO_MODE else "LIVE mode: external adapters enabled"
 st.info(mode_badge)
@@ -17,12 +17,12 @@ st.info(mode_badge)
 with st.expander("How to use this dashboard", expanded=False):
     st.markdown("""
 1. Choose a campaign objective.
-2. Paste a brand brief or provide URLs.
-3. Adjust scoring weights if needed.
+2. Add every available brand channel: website, Facebook, YouTube, TikTok, Instagram, and X.
+3. Paste a brand brief.
 4. Run matching.
-5. Review eligible creators, exclusions, score breakdowns, and the campaign plan.
+5. Review platform context, score breakdowns, exclusions, and the campaign plan.
 
-This is an assisted recommendation tool. Keep human review in the final decision loop.
+Each platform should be analyzed separately in production because storytelling conventions differ by channel.
 """)
 
 with st.sidebar:
@@ -46,15 +46,31 @@ objective = st.radio("Campaign objective", list(config.OBJECTIVES.keys()), horiz
                      format_func=lambda key: config.OBJECTIVES[key]["label"])
 planner_mode = st.toggle("Build campaign plan", value=True)
 
-col1, col2 = st.columns(2)
-website = col1.text_input("Website URL", placeholder="https://brand.com")
-facebook = col2.text_input("Facebook URL", placeholder="https://facebook.com/brand")
+url_cols = st.columns(3)
+website = url_cols[0].text_input("Website URL", placeholder="https://brand.com")
+facebook = url_cols[1].text_input("Facebook URL", placeholder="https://facebook.com/brand")
+youtube = url_cols[2].text_input("YouTube URL", placeholder="https://youtube.com/@brand")
+url_cols2 = st.columns(3)
+tiktok = url_cols2[0].text_input("TikTok URL", placeholder="https://tiktok.com/@brand")
+instagram = url_cols2[1].text_input("Instagram URL", placeholder="https://instagram.com/brand")
+x_url = url_cols2[2].text_input("X URL", placeholder="https://x.com/brand")
+
 raw = st.text_area("Brand brief", placeholder="Example: clean skincare brand for sensitive-skin consumers aged 18-35")
 
 if st.button("Find matching creators", type="primary", use_container_width=True):
-    with st.spinner("Analyzing brand and ranking creators"):
+    with st.spinner("Analyzing platform context and ranking creators"):
         st.session_state["out"] = run_matching(
-            website, facebook, raw, objective=objective, top_k=12, weights=weights, plan=planner_mode
+            website_url=website,
+            facebook_url=facebook,
+            youtube_url=youtube,
+            tiktok_url=tiktok,
+            instagram_url=instagram,
+            x_url=x_url,
+            raw_override=raw,
+            objective=objective,
+            top_k=12,
+            weights=weights,
+            plan=planner_mode,
         )
 
 out = st.session_state.get("out")
@@ -68,8 +84,8 @@ brand = out["brand"]
 st.subheader("Brand profile")
 c1, c2, c3, c4 = st.columns(4)
 c1.metric("Candidates scanned", out["candidate_count"])
-c2.metric("Eligible creators", out["eligible_count"])
-c3.metric("Excluded by gates", len(out["excluded"]))
+c2.metric("Platforms", out["platform_count"])
+c3.metric("Eligible creators", out["eligible_count"])
 c4.metric("Top score", results[0]["match_score"] if results else 0)
 st.write({
     "brand_name": brand["brand_name"],
@@ -77,6 +93,11 @@ st.write({
     "target_audience": brand["target_audience"],
     "search_terms": out["search_terms"][:12],
 })
+
+with st.expander("Platform context"):
+    for context in brand.get("platform_contexts", []):
+        st.markdown(f"**{context['platform']}** - {context['role']}")
+        st.caption(", ".join(context.get("expected_signals", [])))
 
 if out["excluded"]:
     with st.expander("Excluded creators"):

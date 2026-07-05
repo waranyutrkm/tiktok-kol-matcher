@@ -6,14 +6,32 @@ The project is intentionally generic. It is not tied to any agency, client, hiri
 
 ## What It Does
 
-- Accepts a brand brief, website URL, or social profile URL as input
-- Builds a structured brand profile
+- Accepts a brand brief plus platform-specific URLs for website, Facebook, YouTube, TikTok, Instagram, and X
+- Keeps platform context separate because each channel has different storytelling patterns
+- Builds a structured brand profile from owned positioning, community signals, scripts, captions, comments, and video scene beats
 - Retrieves candidate creators from a demo creator pool or live data adapter
 - Applies eligibility gates before ranking
 - Scores creators with an explainable 7-factor model
 - Returns clickable TikTok profile links
 - Produces a campaign planning view for creator mix design
 - Includes a Python engine, tests, and a browser-based demo
+
+## Why Platform Context Matters
+
+Influencer fit is not universal across channels. A message that works on Facebook may not translate to TikTok. A long-form YouTube explainer may reveal education depth that does not appear in Instagram visuals. A TikTok clip may depend on hooks, scene pacing, captions, creator-native phrasing, and CTA rhythm.
+
+For production use, the research layer should ingest each brand channel separately:
+
+| Platform | Primary context |
+| --- | --- |
+| Website | Positioning, offer, pricing, product claims, proof points |
+| Facebook | Community tone, long-copy storytelling, comments, reviews, local trust |
+| YouTube | Scripts, transcripts, chapters, retention hooks, education depth |
+| TikTok | Opening hooks, scene beats, captions, CTA rhythm, creator-native language |
+| Instagram | Visual identity, reels, story highlights, lifestyle framing |
+| X | Real-time opinions, concise positioning, topic velocity, risk signals |
+
+This platform-aware view should be built before recommending a KOL team.
 
 ## Quick Start
 
