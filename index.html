@@ -321,13 +321,16 @@
       <div class="logo">KM</div>
       <div class="wordmark">KOL&nbsp;Matcher <span>/ console</span></div>
     </div>
-    <div class="topbar-tag">Platform-aware creator planning</div>
+    <div class="topbar-tag" data-i18n="topbar-tag">Platform-aware creator planning</div>
     <div class="topbar-right">
-      <button id="theme-btn" class="btn ghost" onclick="toggleTheme()" style="padding: 6px 12px; font-size: 12.5px; border-radius: 8px; font-family:'Space Grotesk',sans-serif; gap:6px; background:var(--surface); height:32px; align-items:center;">
-        <span id="theme-btn-icon">🌙</span> <span id="theme-btn-text">Dark Mode</span>
+      <button id="lang-btn" class="btn ghost" onclick="toggleLanguage()" style="padding: 6px 12px; font-size: 12.5px; border-radius: 8px; font-family:'Space Grotesk',sans-serif; gap:6px; background:var(--surface); height:32px; align-items:center; font-weight:600;">
+        🌐 <span id="lang-btn-text">EN / TH</span>
       </button>
-      <button class="btn primary" onclick="copyConsoleLink()" style="padding: 6px 12px; font-size: 12.5px; border-radius: 8px; height:32px; align-items:center;">Copy Link</button>
-      <span class="pill" style="height:32px; align-items:center;"><span class="dot"></span> Synthetic data</span>
+      <button id="theme-btn" class="btn ghost" onclick="toggleTheme()" style="padding: 6px 12px; font-size: 12.5px; border-radius: 8px; font-family:'Space Grotesk',sans-serif; gap:6px; background:var(--surface); height:32px; align-items:center;">
+        <span id="theme-btn-icon">🌙</span> <span id="theme-btn-text" data-i18n="btn-theme-dark">Dark Mode</span>
+      </button>
+      <button class="btn primary" onclick="copyConsoleLink()" style="padding: 6px 12px; font-size: 12.5px; border-radius: 8px; height:32px; align-items:center;" data-i18n="btn-copy">Copy Link</button>
+      <span class="pill" style="height:32px; align-items:center;"><span class="dot"></span> <span data-i18n="topbar-pill">Synthetic data</span></span>
     </div>
   </div>
 </header>
@@ -339,45 +342,44 @@
       <div class="hero-grid">
         <div>
           <span class="eyebrow">Web · Facebook · YouTube · TikTok · Instagram · X</span>
-          <h1>Turn a brand brief into an explainable KOL team.</h1>
-          <p class="lede">Read a brand across every channel it already owns, score creators against the objective, then plan platform-specific campaign stages — with the reasoning shown at every step.</p>
+          <h1 data-i18n="hero-title">Turn a brand brief into an explainable KOL team.</h1>
+          <p class="lede" data-i18n="hero-lede">Read a brand across every channel it already owns, score creators against the objective, then plan platform-specific campaign stages — with the reasoning shown at every step.</p>
           <div class="cta-row">
-            <button class="btn primary" onclick="runDemo()">Run skincare demo <span class="arrow">→</span></button>
-            <button class="btn ghost" onclick="scrollToForm()">Enter custom brief</button>
+            <button class="btn primary" onclick="runDemo()"><span data-i18n="btn-demo">Run skincare demo</span> <span class="arrow">→</span></button>
+            <button class="btn ghost" onclick="scrollToForm()" data-i18n="btn-custom">Enter custom brief</button>
           </div>
         </div>
         <div class="flow">
-          <div class="flow-title"><span class="eyebrow">How it works</span></div>
+          <div class="flow-title"><span class="eyebrow" data-i18n="stepper-title">How it works</span></div>
           <div class="flow-steps">
-            <div class="fstep"><span class="idx">01</span><div><h4>Brief &amp; sources</h4><p>Add the objective and every brand channel URL.</p></div></div>
-            <div class="fstep"><span class="idx">02</span><div><h4>Platform research</h4><p>Each channel is read in its own native context.</p></div></div>
-            <div class="fstep"><span class="idx">03</span><div><h4>Creator shortlist</h4><p>Seven scoring factors, ranked and explained.</p></div></div>
-            <div class="fstep"><span class="idx">04</span><div><h4>Campaign planner</h4><p>Only the stages that fit each platform.</p></div></div>
+            <div class="fstep"><span class="idx">01</span><div><h4 data-i18n="step1-title">Brief &amp; sources</h4><p data-i18n="step1-desc">Add the objective and every brand channel URL.</p></div></div>
+            <div class="fstep"><span class="idx">02</span><div><h4 data-i18n="step2-title">Platform research</h4><p data-i18n="step2-desc">Each channel is read in its own native context.</p></div></div>
+            <div class="fstep"><span class="idx">03</span><div><h4 data-i18n="step3-title">Creator shortlist</h4><p data-i18n="step3-desc">Seven scoring factors, ranked and explained.</p></div></div>
+            <div class="fstep"><span class="idx">04</span><div><h4 data-i18n="step4-title">Campaign planner</h4><p data-i18n="step4-desc">Only the stages that fit each platform.</p></div></div>
           </div>
         </div>
       </div>
       <div class="kpis">
-        <div class="kpi"><div class="num">6</div><div class="lab">Brand channels</div></div>
-        <div class="kpi"><div class="num">7</div><div class="lab">Scoring factors</div></div>
-        <div class="kpi"><div class="num">12</div><div class="lab">Demo creators</div></div>
-        <div class="kpi"><div class="num">17</div><div class="lab">Engine tests</div></div>
+        <div class="kpi"><div class="num">6</div><div class="lab" data-i18n="kpi-channels">Brand channels</div></div>
+        <div class="kpi"><div class="num">7</div><div class="lab" data-i18n="kpi-factors">Scoring factors</div></div>
+        <div class="kpi"><div class="num">12</div><div class="lab" data-i18n="kpi-creators">Demo creators</div></div>
+        <div class="kpi"><div class="num">17</div><div class="lab" data-i18n="kpi-tests">Engine tests</div></div>
       </div>
     </div>
   </section>
 
-  <!-- ===== CLIENT INPUT ===== -->
-  <section class="section" id="form">
+  <!-- ===== CLIEN  <section class="section" id="form">
     <div class="wrap">
       <div class="panel">
-        <div class="sec-head"><span class="sec-num">01</span><h2>Client input</h2></div>
-        <p class="sec-sub">Add every available brand channel. Platform context is kept separate — a message that works on Facebook may not work on TikTok, YouTube, Instagram, or X.</p>
+        <div class="sec-head"><span class="sec-num">01</span><h2 data-i18n="panel-input-title">Client input</h2></div>
+        <p class="sec-sub" data-i18n="panel-input-desc">Add every available brand channel. Platform context is kept separate — a message that works on Facebook may not work on TikTok, YouTube, Instagram, or X.</p>
 
         <div class="input-grid">
           <!-- campaign setup -->
           <div>
-            <div class="eyebrow" style="margin-bottom:14px">Campaign setup</div>
+            <div class="eyebrow" style="margin-bottom:14px" data-i18n="setup-title">Campaign setup</div>
             <div class="field">
-              <label>Brand category</label>
+              <label data-i18n="label-category">Brand category</label>
               <select id="category">
                 <option value="beauty">Beauty / skincare</option><option value="food">Food / cafe</option>
                 <option value="tech">Tech / gadget</option><option value="fashion">Fashion</option>
@@ -387,62 +389,62 @@
               </select>
             </div>
             <div class="field">
-              <label>Campaign objective</label>
+              <label data-i18n="label-objective">Campaign objective</label>
               <select id="objective">
                 <option value="awareness">Awareness</option><option value="engagement">Engagement</option>
                 <option value="leads">Leads / trust</option><option value="sales">Sales / conversion</option>
               </select>
             </div>
             <div class="field">
-              <label>Brand brief</label>
-              <textarea id="brief" placeholder="Describe the brand, audience, product, price point, campaign goal, and tone."></textarea>
+              <label data-i18n="label-brief">Brand brief</label>
+              <textarea id="brief" data-i18n-placeholder="placeholder-brief" placeholder="Describe the brand, audience, product, price point, campaign goal, and tone."></textarea>
             </div>
             <div class="field" style="margin-top:20px">
               <details class="weights-details" style="border: 1px solid var(--line); border-radius: 10px; padding: 12px; background: var(--surface-2)">
                 <summary style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; cursor: pointer; color: var(--muted); text-transform: uppercase; letter-spacing: .09em; user-select: none;">
-                  Customize Score Weights <span style="font-size:10px; float:right;">⚙️ Expand</span>
+                  <span data-i18n="weights-summary">Customize Score Weights</span> <span style="font-size:10px; float:right;">⚙️ Expand</span>
                 </summary>
                 <div style="margin-top:12px; display:grid; gap:10px;">
-                  <p class="small" style="margin-bottom: 6px; color: var(--muted); line-height: 1.4;">Adjust weight (0-100%) for each scoring factor. Total weights auto-normalize.</p>
+                  <p class="small" data-i18n="weights-desc" style="margin-bottom: 6px; color: var(--muted); line-height: 1.4;">Adjust weight (0-100%) for each scoring factor. Total weights will auto-normalize.</p>
                   
                   <div class="weight-slider-row">
-                    <span class="weight-label" title="Relevance: matches creator category with campaign category.">Relevance</span>
+                    <span class="weight-label" data-i18n="w-relevance-lbl" title="Relevance: matches creator category with campaign category.">Relevance</span>
                     <input type="range" id="w-relevance" min="0" max="100" value="25" oninput="updateWeightsDisplay()">
                     <span class="weight-val" id="val-relevance">25%</span>
                   </div>
                   <div class="weight-slider-row">
-                    <span class="weight-label" title="Audience: demographic / size fit.">Audience</span>
+                    <span class="weight-label" data-i18n="w-audience-lbl" title="Audience: demographic / size fit.">Audience</span>
                     <input type="range" id="w-audience" min="0" max="100" value="20" oninput="updateWeightsDisplay()">
                     <span class="weight-val" id="val-audience">20%</span>
                   </div>
                   <div class="weight-slider-row">
-                    <span class="weight-label" title="Objective: performance / commerce role compatibility.">Objective</span>
+                    <span class="weight-label" data-i18n="w-objective-lbl" title="Objective: performance / commerce role compatibility.">Objective</span>
                     <input type="range" id="w-objective" min="0" max="100" value="20" oninput="updateWeightsDisplay()">
                     <span class="weight-val" id="val-objective">20%</span>
                   </div>
                   <div class="weight-slider-row">
-                    <span class="weight-label" title="Style: platform fits & script styles.">Style</span>
+                    <span class="weight-label" data-i18n="w-style-lbl" title="Style: platform fits & script styles.">Style</span>
                     <input type="range" id="w-style" min="0" max="100" value="15" oninput="updateWeightsDisplay()">
                     <span class="weight-val" id="val-style">15%</span>
                   </div>
                   <div class="weight-slider-row">
-                    <span class="weight-label" title="Performance: view-based engagement quality.">Performance</span>
+                    <span class="weight-label" data-i18n="w-performance-lbl" title="Performance: view-based engagement quality.">Performance</span>
                     <input type="range" id="w-performance" min="0" max="100" value="10" oninput="updateWeightsDisplay()">
                     <span class="weight-val" id="val-performance">10%</span>
                   </div>
                   <div class="weight-slider-row">
-                    <span class="weight-label" title="Commerce: checkout / affiliate capabilities.">Commerce</span>
+                    <span class="weight-label" data-i18n="w-commerce-lbl" title="Commerce: checkout / affiliate capabilities.">Commerce</span>
                     <input type="range" id="w-commerce" min="0" max="100" value="5" oninput="updateWeightsDisplay()">
                     <span class="weight-val" id="val-commerce">5%</span>
                   </div>
                   <div class="weight-slider-row">
-                    <span class="weight-label" title="Safety: risk & disclosure score.">Safety</span>
+                    <span class="weight-label" data-i18n="w-safety-lbl" title="Safety: risk & disclosure score.">Safety</span>
                     <input type="range" id="w-safety" min="0" max="100" value="5" oninput="updateWeightsDisplay()">
                     <span class="weight-val" id="val-safety">5%</span>
                   </div>
                   
                   <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; text-align:right; margin-top:4px; color:var(--muted)">
-                    Total Sum: <span id="weight-sum">100%</span>
+                    <span data-i18n="w-sum-lbl">Total Sum:</span> <span id="weight-sum">100%</span>
                   </div>
                 </div>
               </details>
@@ -452,49 +454,50 @@
           <!-- platform sources -->
           <div>
             <div class="sources-head">
-              <span class="eyebrow">Platform sources</span>
-              <span class="small mono">6 channels</span>
+              <span class="eyebrow" data-i18n="sources-title">Platform sources</span>
+              <span class="small mono" data-i18n="sources-subtitle">6 channels</span>
             </div>
             <div class="src-grid">
               <div class="src-card">
-                <div class="src-top"><span class="pchip pchip-website">WEB</span><span class="src-name">Website</span><span class="src-help">proof</span></div>
+                <div class="src-top"><span class="pchip pchip-website">WEB</span><span class="src-name" data-i18n="web-name">Website</span><span class="src-help" data-i18n="web-help">proof</span></div>
                 <input id="webUrl" placeholder="https://brand.com" />
-                <div class="src-status"><span class="off">Not linked</span><span class="on">Linked</span></div>
+                <div class="src-status"><span class="off" data-i18n="status-not-linked">Not linked</span><span class="on" data-i18n="status-linked">Linked</span></div>
               </div>
               <div class="src-card">
-                <div class="src-top"><span class="pchip pchip-facebook">FB</span><span class="src-name">Facebook</span><span class="src-help">community</span></div>
+                <div class="src-top"><span class="pchip pchip-facebook">FB</span><span class="src-name" data-i18n="fb-name">Facebook</span><span class="src-help" data-i18n="fb-help">community</span></div>
                 <input id="facebookUrl" placeholder="https://facebook.com/brand" />
-                <div class="src-status"><span class="off">Not linked</span><span class="on">Linked</span></div>
+                <div class="src-status"><span class="off" data-i18n="status-not-linked">Not linked</span><span class="on" data-i18n="status-linked">Linked</span></div>
               </div>
               <div class="src-card">
-                <div class="src-top"><span class="pchip pchip-youtube">YT</span><span class="src-name">YouTube</span><span class="src-help">education</span></div>
+                <div class="src-top"><span class="pchip pchip-youtube">YT</span><span class="src-name" data-i18n="yt-name">YouTube</span><span class="src-help" data-i18n="yt-help">education</span></div>
                 <input id="youtubeUrl" placeholder="https://youtube.com/@brand" />
-                <div class="src-status"><span class="off">Not linked</span><span class="on">Linked</span></div>
+                <div class="src-status"><span class="off" data-i18n="status-not-linked">Not linked</span><span class="on" data-i18n="status-linked">Linked</span></div>
               </div>
               <div class="src-card">
-                <div class="src-top"><span class="pchip pchip-tiktok">TT</span><span class="src-name">TikTok</span><span class="src-help">hook · shop</span></div>
+                <div class="src-top"><span class="pchip pchip-tiktok">TT</span><span class="src-name" data-i18n="tt-name">TikTok</span><span class="src-help" data-i18n="tt-help">hook · shop</span></div>
                 <input id="tiktokUrl" placeholder="https://tiktok.com/@brand" />
-                <div class="src-status"><span class="off">Not linked</span><span class="on">Linked</span></div>
+                <div class="src-status"><span class="off" data-i18n="status-not-linked">Not linked</span><span class="on" data-i18n="status-linked">Linked</span></div>
               </div>
               <div class="src-card">
-                <div class="src-top"><span class="pchip pchip-instagram">IG</span><span class="src-name">Instagram</span><span class="src-help">visual</span></div>
+                <div class="src-top"><span class="pchip pchip-instagram">IG</span><span class="src-name" data-i18n="ig-name">Instagram</span><span class="src-help" data-i18n="ig-help">visual</span></div>
                 <input id="instagramUrl" placeholder="https://instagram.com/brand" />
-                <div class="src-status"><span class="off">Not linked</span><span class="on">Linked</span></div>
+                <div class="src-status"><span class="off" data-i18n="status-not-linked">Not linked</span><span class="on" data-i18n="status-linked">Linked</span></div>
               </div>
               <div class="src-card">
-                <div class="src-top"><span class="pchip pchip-x">X</span><span class="src-name">X</span><span class="src-help">risk test</span></div>
+                <div class="src-top"><span class="pchip pchip-x">X</span><span class="src-name" data-i18n="x-name">X</span><span class="src-help" data-i18n="x-help">risk test</span></div>
                 <input id="xUrl" placeholder="https://x.com/brand" />
-                <div class="src-status"><span class="off">Not linked</span><span class="on">Linked</span></div>
+                <div class="src-status"><span class="off" data-i18n="status-not-linked">Not linked</span><span class="on" data-i18n="status-linked">Linked</span></div>
               </div>
             </div>
-            <div class="setup-note">Production research layer: pull platform-specific posts, video scripts, transcripts, captions, comments, scene beats, CTAs, and engagement patterns before recommending creator roles.</div>
+            <div class="setup-note" data-i18n="sources-note">Production research layer: pull platform-specific posts, video scripts, transcripts, captions, comments, scene beats, CTAs, and engagement patterns before recommending creator roles.</div>
           </div>
         </div>
 
         <div class="run-row">
-          <button class="btn primary" onclick="matchCreators()">Find matching KOLs <span class="arrow">→</span></button>
-          <button class="btn ghost" onclick="runDemo()">Use sample brief</button>
+          <button class="btn primary" onclick="matchCreators()"><span data-i18n="btn-find">Find matching KOLs</span> <span class="arrow">→</span></button>
+          <button class="btn ghost" onclick="runDemo()" data-i18n="btn-sample">Use sample brief</button>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -504,18 +507,18 @@
     <div class="wrap">
       <div class="panel">
         <div class="res-head">
-          <div class="sec-head"><span class="sec-num">02</span><h2>Results</h2></div>
+          <div class="sec-head"><span class="sec-num">02</span><h2 data-i18n="results-title">Results</h2></div>
           <div class="export-actions" style="margin-left: auto; display: flex; gap: 8px;">
-            <button class="btn ghost" onclick="exportCSV()" style="padding: 6px 12px; font-size: 12px; border-radius: 8px; background:var(--surface); height:32px; align-items:center; font-family:'Space Grotesk',sans-serif;">Export Shortlist (CSV)</button>
-            <button class="btn ghost" onclick="exportJSON()" style="padding: 6px 12px; font-size: 12px; border-radius: 8px; background:var(--surface); height:32px; align-items:center; font-family:'Space Grotesk',sans-serif;">Export Plan (JSON)</button>
+            <button class="btn ghost" onclick="exportCSV()" style="padding: 6px 12px; font-size: 12px; border-radius: 8px; background:var(--surface); height:32px; align-items:center; font-family:'Space Grotesk',sans-serif;" data-i18n="btn-export-csv">Export Shortlist (CSV)</button>
+            <button class="btn ghost" onclick="exportJSON()" style="padding: 6px 12px; font-size: 12px; border-radius: 8px; background:var(--surface); height:32px; align-items:center; font-family:'Space Grotesk',sans-serif;" data-i18n="btn-export-json">Export Plan (JSON)</button>
           </div>
         </div>
 
         <div class="kpis" style="margin-top:16px">
-          <div class="kpi"><div class="num" id="scanCount">12</div><div class="lab">Creators scanned</div></div>
-          <div class="kpi"><div class="num" id="platformCount">0</div><div class="lab">Brand channels</div></div>
-          <div class="kpi"><div class="num" id="eligibleCount">0</div><div class="lab">Eligible creators</div></div>
-          <div class="kpi"><div class="num" id="topScore">0</div><div class="lab">Top match score</div></div>
+          <div class="kpi"><div class="num" id="scanCount">12</div><div class="lab" data-i18n="res-kpi-scanned">Creators scanned</div></div>
+          <div class="kpi"><div class="num" id="platformCount">0</div><div class="lab" data-i18n="res-kpi-channels">Brand channels</div></div>
+          <div class="kpi"><div class="num" id="eligibleCount">0</div><div class="lab" data-i18n="res-kpi-eligible">Eligible creators</div></div>
+          <div class="kpi"><div class="num" id="topScore">0</div><div class="lab" data-i18n="res-kpi-top">Top match score</div></div>
         </div>
 
         <div class="insight" id="insight"></div>
@@ -523,13 +526,13 @@
         <div id="contextBox" class="context"></div>
 
         <div class="tabs">
-          <button class="tab active" onclick="showMode('quick',this)">Quick Match</button>
-          <button class="tab" onclick="showMode('planner',this)">Campaign Planner</button>
+          <button class="tab active" onclick="showMode('quick',this)" data-i18n="tab-quick">Quick Match</button>
+          <button class="tab" onclick="showMode('planner',this)" data-i18n="tab-planner">Campaign Planner</button>
         </div>
         <div id="quick" class="tabpane"></div>
         <div id="planner" class="tabpane hidden"></div>
 
-        <div class="note"><b>Data note:</b> this demo uses synthetic creator data. A production system should connect to authorized public data sources and keep human review in the final decision loop.</div>
+        <div class="note"><b data-i18n="results-note-bold">Data note:</b> <span data-i18n="results-note-text">this demo uses synthetic creator data. A production system should connect to authorized public data sources and keep human review in the final decision loop.</span></div>
       </div>
     </div>
   </section>
@@ -537,25 +540,25 @@
 
 <footer>
   <div class="wrap">
-    <span>TikTok KOL Matcher — open, platform-aware creator planning prototype.</span>
-    <span class="mono">Synthetic data · human review required</span>
+    <span data-i18n="footer-copyright">TikTok KOL Matcher — open, platform-aware creator planning prototype.</span>
+    <span class="mono" data-i18n="footer-note">Synthetic data · human review required</span>
   </div>
 </footer>
 
 <script>
 const creators = [
-  {u:"beautybowljidapa", n:"Beauty Bowl | Skincare Review", cat:["beauty","skincare"], roles:["reviewer","educator"], followers:412000, views:185000, er:12.8, commerce:["affiliate","shop","live"], safety:92, url:"https://www.tiktok.com/@beautybowljidapa", bio:"Skincare and cosmetics reviewer focused on sensitive skin routines and product education."},
-  {u:"cleanbeautymild", n:"Clean Beauty Mild", cat:["beauty","wellness"], roles:["educator","reviewer"], followers:86000, views:52000, er:14.1, commerce:["affiliate","shop"], safety:88, url:"https://www.tiktok.com/@cleanbeautymild", bio:"Clean beauty creator explaining ingredient choices, routines, and gentle product comparisons."},
-  {u:"foodiemhee", n:"Foodie Mhee | Street Food", cat:["food","cafe"], roles:["reviewer","lifestyle"], followers:980000, views:520000, er:12.2, commerce:["affiliate"], safety:90, url:"https://www.tiktok.com/@foodiemhee", bio:"Food and cafe discovery creator with high reach in Bangkok and urban audiences."},
-  {u:"techsanook", n:"Tech Sanook | Gadget Review", cat:["tech","gadget"], roles:["reviewer","educator"], followers:305000, views:142000, er:7.6, commerce:["affiliate","shop"], safety:82, url:"https://www.tiktok.com/@techsanook", bio:"Gadget and smartphone reviewer explaining features in practical everyday language."},
-  {u:"momlovekids", n:"Mom Love Kids", cat:["parenting","family"], roles:["reviewer","community"], followers:220000, views:98000, er:14.6, commerce:["affiliate","shop"], safety:86, url:"https://www.tiktok.com/@momlovekids", bio:"Parenting creator reviewing family products, baby care items, and household decisions."},
-  {u:"fitfirmnan", n:"Fit Firm Nan | Fitness Coach", cat:["fitness","health"], roles:["educator","expert"], followers:540000, views:240000, er:14.4, commerce:["affiliate","shop"], safety:88, url:"https://www.tiktok.com/@fitfirmnan", bio:"Fitness and nutrition coach focused on sustainable weight loss and daily routines."},
-  {u:"styleploy", n:"Style Ploy | OOTD", cat:["fashion","lifestyle"], roles:["reviewer","lifestyle"], followers:675000, views:310000, er:15.8, commerce:["affiliate","shop","live"], safety:91, url:"https://www.tiktok.com/@styleploy", bio:"Fashion creator for outfit ideas, shopping hauls, and affordable style inspiration."},
-  {u:"gadgetgeekttp", n:"Gadget Geek TTP", cat:["tech","gadget"], roles:["reviewer","expert"], followers:158000, views:72000, er:8.3, commerce:["affiliate","shop"], safety:85, url:"https://www.tiktok.com/@gadgetgeekttp", bio:"Laptop reviews, computer setups, work-from-home gear, desk accessories, and productivity tools."},
-  {u:"travelgorn", n:"Travel Gorn", cat:["travel","lifestyle"], roles:["storyteller","lifestyle"], followers:740000, views:360000, er:10.3, commerce:[], safety:85, url:"https://www.tiktok.com/@travelgorn", bio:"Travel storyteller covering hotels, weekend trips, and destination inspiration."},
-  {u:"moneymentorja", n:"Money Mentor JA", cat:["finance","education"], roles:["educator","expert"], followers:190000, views:85000, er:9.5, commerce:[], safety:90, url:"https://www.tiktok.com/@moneymentorja", bio:"Personal finance education, saving habits, investment basics, budgeting frameworks, and practical money tips."},
-  {u:"homeprettyroom", n:"Home Pretty Room", cat:["home","decor"], roles:["reviewer","lifestyle"], followers:128000, views:61000, er:11.2, commerce:["affiliate","shop"], safety:87, url:"https://www.tiktok.com/@homeprettyroom", bio:"Home decor, small-space organization, furniture finds, condo styling, and room makeovers."},
-  {u:"petdailyclub", n:"Pet Daily Club", cat:["pet","lifestyle"], roles:["community","reviewer"], followers:260000, views:130000, er:14.3, commerce:["affiliate","shop"], safety:89, url:"https://www.tiktok.com/@petdailyclub", bio:"Pet care, dog and cat food reviews, grooming routines, playful stories, and owner education."}
+  {u:"beautybowljidapa", n:"Beauty Bowl | Skincare Review", cat:["beauty","skincare"], roles:["reviewer","educator"], followers:412000, views:185000, er:12.8, commerce:["affiliate","shop","live"], safety:92, url:"https://www.tiktok.com/@beautybowljidapa", bio_en:"Skincare and cosmetics reviewer focused on sensitive skin routines and product education.", bio_th:"บล็อกเกอร์สายบิวตี้ที่เจาะลึกการรีวิวสกินแคร์สำหรับผิวแพ้ง่าย การเปรียบเทียบส่วนผสม และแนะแนวรูทีนประจำวัน"},
+  {u:"cleanbeautymild", n:"Clean Beauty Mild", cat:["beauty","wellness"], roles:["educator","reviewer"], followers:86000, views:52000, er:14.1, commerce:["affiliate","shop"], safety:88, url:"https://www.tiktok.com/@cleanbeautymild", bio_en:"Clean beauty creator explaining ingredient choices, routines, and gentle product comparisons.", bio_th:"ครีเอเตอร์สายผลิตภัณฑ์คลีนบิวตี้ เน้นวิเคราะห์ส่วนผสมสกินแคร์ที่อ่อนโยนต่อผิวหน้า และรีวิวเปรียบเทียบสไตล์มินิมอล"},
+  {u:"foodiemhee", n:"Foodie Mhee | Street Food", cat:["food","cafe"], roles:["reviewer","lifestyle"], followers:980000, views:520000, er:12.2, commerce:["affiliate"], safety:90, url:"https://www.tiktok.com/@foodiemhee", bio_en:"Food and cafe discovery creator with high reach in Bangkok and urban audiences.", bio_th:"เพจรีวิวอาหารและคาเฟ่ชื่อดังในกรุงเทพฯ ถ่ายทอดภาพสวยงามและเสียงพากย์ที่เป็นกันเอง เข้าถึงกลุ่มครอบครัวและวัยรุ่น"},
+  {u:"techsanook", n:"Tech Sanook | Gadget Review", cat:["tech","gadget"], roles:["reviewer","educator"], followers:305000, views:142000, er:7.6, commerce:["affiliate","shop"], safety:82, url:"https://www.tiktok.com/@techsanook", bio_en:"Gadget and smartphone reviewer explaining features in practical everyday language.", bio_th:"ผู้รีวิวสินค้าไอที สมาร์ทโฟน และอุปกรณ์อิเล็กทรอนิกส์ อธิบายสเปกที่เข้าใจยากให้กลายเป็นภาษาพูดในชีวิตประจำวัน"},
+  {u:"momlovekids", n:"Mom Love Kids", cat:["parenting","family"], roles:["reviewer","community"], followers:220000, views:98000, er:14.6, commerce:["affiliate","shop"], safety:86, url:"https://www.tiktok.com/@momlovekids", bio_en:"Parenting creator reviewing family products, baby care items, and household decisions.", bio_th:"ครีเอเตอร์แม่และเด็ก แบ่งปันการเลี้ยงลูก รีวิวของใช้ในบ้าน ของเล่นเด็ก และของใช้เด็กอ่อนเพื่อประกอบการตัดสินใจของครอบครัว"},
+  {u:"fitfirmnan", n:"Fit Firm Nan | Fitness Coach", cat:["fitness","health"], roles:["educator","expert"], followers:540000, views:240000, er:14.4, commerce:["affiliate","shop"], safety:88, url:"https://www.tiktok.com/@fitfirmnan", bio_en:"Fitness and nutrition coach focused on sustainable weight loss and daily routines.", bio_th:"เทรนเนอร์ออกกำลังกายและผู้เชี่ยวชาญด้านโภชนาการ สอนวิธีออกกำลังกายที่ทำได้เองที่บ้าน และรีวิวอาหารเสริมเพื่อสุขภาพ"},
+  {u:"styleploy", n:"Style Ploy | OOTD", cat:["fashion","lifestyle"], roles:["reviewer","lifestyle"], followers:675000, views:310000, er:15.8, commerce:["affiliate","shop","live"], safety:91, url:"https://www.tiktok.com/@styleploy", bio_en:"Fashion creator for outfit ideas, shopping hauls, and affordable style inspiration.", bio_th:"บล็อกเกอร์แฟชั่น แชร์ไอเดียแต่งตัว OOTD รีวิวเสื้อผ้าแบรนด์ออนไลน์ และแนะนำการมิกซ์แอนด์แมทช์ราคาประหยัด"},
+  {u:"gadgetgeekttp", n:"Gadget Geek TTP", cat:["tech","gadget"], roles:["reviewer","expert"], followers:158000, views:72000, er:8.3, commerce:["affiliate","shop"], safety:85, url:"https://www.tiktok.com/@gadgetgeekttp", bio_en:"Laptop reviews, computer setups, work-from-home gear, desk accessories, and productivity tools.", bio_th:"ผู้รีวิวคอมพิวเตอร์และโน้ตบุ๊ก แนะนำจัดโต๊ะคอมสำหรับ Work-from-home รีวิวอุปกรณ์เสริมไอทีเพื่อเพิ่มประสิทธิภาพในการทำงาน"},
+  {u:"travelgorn", n:"Travel Gorn", cat:["travel","lifestyle"], roles:["storyteller","lifestyle"], followers:740000, views:360000, er:10.3, commerce:[], safety:85, url:"https://www.tiktok.com/@travelgorn", bio_en:"Travel storyteller covering hotels, weekend trips, and destination inspiration.", bio_th:"บล็อกเกอร์ท่องเที่ยวและนักเล่าเรื่องราว ถ่ายภาพรีสอร์ทสวยงาม แนะนำทริปวันหยุดสั้นๆ และไกด์ไลน์สำหรับการเดินทางชิลๆ"},
+  {u:"moneymentorja", n:"Money Mentor JA", cat:["finance","education"], roles:["educator","expert"], followers:190000, views:85000, er:9.5, commerce:[], safety:90, url:"https://www.tiktok.com/@moneymentorja", bio_en:"Personal finance education, saving habits, investment basics, budgeting frameworks, and practical money tips.", bio_th:"เพจให้ความรู้ด้านการเงินส่วนบุคคล เทคนิคการออมเงิน แนวคิดพื้นฐานการลงทุน การจัดงบรายรับรายจ่าย และทิปการใช้เงินสำหรับวัยทำงาน"},
+  {u:"homeprettyroom", n:"Home Pretty Room", cat:["home","decor"], roles:["reviewer","lifestyle"], followers:128000, views:61000, er:11.2, commerce:["affiliate","shop"], safety:87, url:"https://www.tiktok.com/@homeprettyroom", bio_en:"Home decor, small-space organization, furniture finds, condo styling, and room makeovers.", bio_th:"บล็อกเกอร์แต่งบ้าน จัดระเบียบห้องคอนโดพื้นที่จำกัด รีวิวเฟอร์นิเจอร์ประกอบง่าย และแชร์ไอเดียจัดแต่งบ้านสไตล์มูจิ/มินิมอล"},
+  {u:"petdailyclub", n:"Pet Daily Club", cat:["pet","lifestyle"], roles:["community","reviewer"], followers:260000, views:130000, er:14.3, commerce:["affiliate","shop"], safety:89, url:"https://www.tiktok.com/@petdailyclub", bio_en:"Pet care, dog and cat food reviews, grooming routines, playful stories, and owner education.", bio_th:"ครีเอเตอร์รีวิวสินค้าสำหรับสุนัขและแมว อาหารสัตว์เลี้ยง แชมพูอาบน้ำ และแชร์ความรู้การดูแลสัตว์เลี้ยงแสนรักอย่างถูกต้อง"}
 ];
 const related = {beauty:["beauty","skincare","wellness","fashion"], food:["food","cafe","lifestyle"], tech:["tech","gadget"], fashion:["fashion","lifestyle","beauty"], fitness:["fitness","health","wellness"], parenting:["parenting","family","lifestyle"], finance:["finance","education"], home:["home","decor","lifestyle","furniture"], pet:["pet","lifestyle"]};
 const platforms = [
@@ -566,7 +569,6 @@ const platforms = [
   ["instagramUrl","Instagram","Visual identity, reels, story highlights, lifestyle framing"],
   ["xUrl","X","Real-time opinions, concise messaging, topics, controversy risk"]
 ];
-// presentation metadata — display only, not part of scoring
 const platformMeta = {
   webUrl:{code:"WEB",key:"website"},
   facebookUrl:{code:"FB",key:"facebook"},
@@ -575,11 +577,310 @@ const platformMeta = {
   instagramUrl:{code:"IG",key:"instagram"},
   xUrl:{code:"X",key:"x"}
 };
-const objectiveLabels = {awareness:"Awareness",engagement:"Engagement",leads:"Leads / trust",sales:"Sales / conversion"};
+
+// Language i18n translation engine data
+const i18n = {
+  en: {
+    "topbar-tag": "Platform-aware creator planning",
+    "topbar-pill": "Synthetic data",
+    "btn-copy": "Copy Link",
+    "btn-theme-dark": "Dark Mode",
+    "btn-theme-light": "Light Mode",
+    "hero-title": "Turn a brand brief into an explainable KOL team.",
+    "hero-lede": "Read a brand across every channel it already owns, score creators against the objective, then plan platform-specific campaign stages — with the reasoning shown at every step.",
+    "btn-demo": "Run skincare demo",
+    "btn-custom": "Enter custom brief",
+    "stepper-title": "How it works",
+    "step1-title": "Brief & sources",
+    "step1-desc": "Add the objective and every brand channel URL.",
+    "step2-title": "Platform research",
+    "step2-desc": "Each channel is read in its own native context.",
+    "step3-title": "Creator shortlist",
+    "step3-desc": "Seven scoring factors, ranked and explained.",
+    "step4-title": "Campaign planner",
+    "step4-desc": "Only the stages that fit each platform.",
+    "kpi-channels": "Brand channels",
+    "kpi-factors": "Scoring factors",
+    "kpi-creators": "Demo creators",
+    "kpi-tests": "Engine tests",
+    "panel-input-title": "Client input",
+    "panel-input-desc": "Add every available brand channel. Platform context is kept separate — a message that works on Facebook may not work on TikTok, YouTube, Instagram, or X.",
+    "setup-title": "Campaign setup",
+    "label-category": "Brand category",
+    "label-objective": "Campaign objective",
+    "label-brief": "Brand brief",
+    "placeholder-brief": "Describe the brand, audience, product, price point, campaign goal, and tone.",
+    "weights-summary": "Customize Score Weights",
+    "weights-desc": "Adjust weight (0-100%) for each scoring factor. Total weights will auto-normalize.",
+    "w-relevance-lbl": "Relevance",
+    "w-audience-lbl": "Audience",
+    "w-objective-lbl": "Objective",
+    "w-style-lbl": "Style",
+    "w-performance-lbl": "Performance",
+    "w-commerce-lbl": "Commerce",
+    "w-safety-lbl": "Safety",
+    "w-sum-lbl": "Total Sum:",
+    "sources-title": "Platform sources",
+    "sources-subtitle": "6 channels",
+    "web-name": "Website",
+    "web-help": "proof",
+    "fb-name": "Facebook",
+    "fb-help": "community",
+    "yt-name": "YouTube",
+    "yt-help": "education",
+    "tt-name": "TikTok",
+    "tt-help": "hook · shop",
+    "ig-name": "Instagram",
+    "ig-help": "visual",
+    "x-name": "X",
+    "x-help": "risk test",
+    "status-not-linked": "Not linked",
+    "status-linked": "Linked",
+    "sources-note": "Production research layer: pull platform-specific posts, video scripts, transcripts, captions, comments, scene beats, CTAs, and engagement patterns before recommending creator roles.",
+    "btn-find": "Find matching KOLs",
+    "btn-sample": "Use sample brief",
+    "results-title": "Results",
+    "btn-export-csv": "Export Shortlist (CSV)",
+    "btn-export-json": "Export Plan (JSON)",
+    "res-kpi-scanned": "Creators scanned",
+    "res-kpi-channels": "Brand channels",
+    "res-kpi-eligible": "Eligible creators",
+    "res-kpi-top": "Top match score",
+    "tab-quick": "Quick Match",
+    "tab-planner": "Campaign Planner",
+    "results-note-bold": "Data note:",
+    "results-note-text": "this demo uses synthetic creator data. A production system should connect to authorized public data sources and keep human review in the final decision loop.",
+    "footer-copyright": "TikTok KOL Matcher — open, platform-aware creator planning prototype.",
+    "footer-note": "Synthetic data · human review required",
+    "opt-beauty": "Beauty / skincare",
+    "opt-food": "Food / cafe",
+    "opt-tech": "Tech / gadget",
+    "opt-fashion": "Fashion",
+    "opt-fitness": "Fitness / health",
+    "opt-parenting": "Parenting",
+    "opt-finance": "Finance / investment",
+    "opt-home": "Home / decor",
+    "opt-pet": "Pet / lifestyle",
+    "opt-awareness": "Awareness",
+    "opt-engagement": "Engagement",
+    "opt-leads": "Leads / trust",
+    "opt-sales": "Sales / conversion"
+  },
+  th: {
+    "topbar-tag": "การวางแผนครีเอเตอร์อิงตามแพลตฟอร์ม",
+    "topbar-pill": "ข้อมูลจำลอง",
+    "btn-copy": "คัดลอกลิงก์",
+    "btn-theme-dark": "โหมดมืด",
+    "btn-theme-light": "โหมดสว่าง",
+    "hero-title": "เปลี่ยน Brief แบรนด์ให้เป็นทีม KOL ที่อธิบายเหตุผลได้",
+    "hero-lede": "วิเคราะห์ช่องทางแบรนด์ที่เปิดอยู่ ประเมินครีเอเตอร์ตามเป้าหมายแคมเปญ และจัดขั้นตอนแคมเปญแยกแพลตฟอร์ม พร้อมแสดงเหตุผลอย่างละเอียดในทุกขั้นตอน",
+    "btn-demo": "รันเดโม Skincare",
+    "btn-custom": "กรอก Brief ของคุณ",
+    "stepper-title": "ขั้นตอนการทำงาน",
+    "step1-title": "Brief & ลิงก์ช่องทาง",
+    "step1-desc": "เลือกวัตถุประสงค์และใส่ URL ช่องทางทั้งหมดของแบรนด์ที่มี",
+    "step2-title": "วิเคราะห์แคมเปญแยกช่องทาง",
+    "step2-desc": "แต่ละแพลตฟอร์มจะถูกประเมินแยกบริบทอย่างเป็นอิสระ",
+    "step3-title": "คัดเลือกครีเอเตอร์",
+    "step3-desc": "คำนวณสัดส่วนคะแนน 7 ด้าน จัดอันดับพร้อมอธิบายเหตุผล",
+    "step4-title": "แผนงานแคมเปญ",
+    "step4-desc": "เลือกเฉพาะช่องทางและขั้นตอนกลยุทธ์ที่เหมาะสมกับเป้าหมาย",
+    "kpi-channels": "ช่องทางแบรนด์",
+    "kpi-factors": "เกณฑ์การประเมิน",
+    "kpi-creators": "ครีเอเตอร์จำลอง",
+    "kpi-tests": "รายการทดสอบ",
+    "panel-input-title": "ข้อมูลแบรนด์ & แคมเปญ",
+    "panel-input-desc": "ใส่ลิงก์ข้อมูลแบรนด์ที่มี ระบบจะทำการประเมินแบรนด์แยกบริบทเป็นอิสระต่อกัน — เพราะโครงสร้างข้อความที่เวิร์กบน Facebook อาจใช้ไม่ได้กับจังหวะของ TikTok, YouTube, Instagram หรือ X",
+    "setup-title": "ตั้งค่าข้อมูลแคมเปญ",
+    "label-category": "หมวดหมู่แบรนด์",
+    "label-objective": "เป้าหมายแคมเปญ",
+    "label-brief": "Brief รายละเอียดแบรนด์",
+    "placeholder-brief": "อธิบายจุดเด่นแบรนด์, กลุ่มเป้าหมาย, สินค้า, ระดับราคา, เป้าหมายแคมเปญ และน้ำเสียงโทนของแบรนด์",
+    "weights-summary": "ปรับเปลี่ยนสัดส่วนคะแนน",
+    "weights-desc": "ปรับน้ำหนักสัดส่วน (0-100%) สำหรับการประเมินแต่ละด้าน โดยคะแนนเฉลี่ยทั้งหมดจะคำนวณสัดส่วนเฉลี่ย (Normalize) ให้อัตโนมัติ",
+    "w-relevance-lbl": "ความตรงสายหมวดหมู่",
+    "w-audience-lbl": "กลุ่มเป้าหมายผู้ติดตาม",
+    "w-objective-lbl": "ตอบเป้าหมายแคมเปญ",
+    "w-style-lbl": "ความเข้ากันของสไตล์",
+    "w-performance-lbl": "ประสิทธิภาพช่อง",
+    "w-commerce-lbl": "กลไกการป้ายยา",
+    "w-safety-lbl": "ความปลอดภัยแบรนด์",
+    "w-sum-lbl": "ผลรวมคะแนนสไลเดอร์:",
+    "sources-title": "แหล่งข้อมูลช่องทางแบรนด์",
+    "sources-subtitle": "6 ช่องทาง",
+    "web-name": "เว็บไซต์",
+    "web-help": "วิเคราะห์การเคลม",
+    "fb-name": "เฟซบุ๊ก",
+    "fb-help": "วิเคราะห์ชุมชน",
+    "yt-name": "ยูทูป",
+    "yt-help": "วิเคราะห์เนื้อหาเจาะลึก",
+    "tt-name": "ติ๊กต็อก",
+    "tt-help": "จังหวะป้ายยา/ตะกร้า",
+    "ig-name": "อินสตาแกรม",
+    "ig-help": "สไตล์ไลฟ์สไตล์",
+    "x-name": "เอ็กซ์",
+    "x-help": "คัดกรองดราม่า",
+    "status-not-linked": "ยังไม่ได้ผูก",
+    "status-linked": "ผูกลิงก์แล้ว",
+    "sources-note": "ระบบประเมินในโปรเจคจริง: ดึงข้อมูลโพสต์ สคริปต์ ซับไตเติล คอมเมนต์ยอดนิยม จังหวะวิดีโอ แฮชแท็ก และสถิติการมีส่วนร่วมแยกเป็นอิสระต่อกันก่อนทำการประเมินบทบาทครีเอเตอร์ที่เหมาะสม",
+    "btn-find": "ค้นหาครีเอเตอร์ที่สอดคล้อง",
+    "btn-sample": "ใช้ข้อมูลตัวอย่าง",
+    "results-title": "ผลการวิเคราะห์",
+    "btn-export-csv": "ส่งออกรายชื่อ (CSV)",
+    "btn-export-json": "ส่งออกแผน (JSON)",
+    "res-kpi-scanned": "ครีเอเตอร์ตรวจสอบแล้ว",
+    "res-kpi-channels": "ช่องทางแบรนด์ที่ใช้",
+    "res-kpi-eligible": "ผ่านการคัดเลือก",
+    "res-kpi-top": "คะแนนสูงสุดที่ได้",
+    "tab-quick": "จับคู่ด่วน",
+    "tab-planner": "ตัววางแผนแคมเปญ",
+    "results-note-bold": "ข้อจำกัดข้อมูล:",
+    "results-note-text": "คอนโซลจำลองนี้ใช้ข้อมูลครีเอเตอร์จำลองเท่านั้น ในการรันงานจริงจำเป็นต้องเชื่อมต่อ API กับฐานข้อมูลครีเอเตอร์สาธารณะและต้องใช้ทีมงานผู้เชี่ยวชาญตรวจสอบก่อนคัดเลือกขั้นสุดท้าย",
+    "footer-copyright": "TikTok KOL Matcher — โครงร่างต้นแบบการวางแผนกลยุทธ์ครีเอเตอร์อิงตามแพลตฟอร์มอย่างโปร่งใส",
+    "footer-note": "ข้อมูลจำลอง · จำเป็นต้องผ่านการตรวจสอบโดยมนุษย์",
+    "opt-beauty": "ความงาม / สกินแคร์",
+    "opt-food": "อาหาร / คาเฟ่",
+    "opt-tech": "เทคโนโลยี / แก็ดเจ็ต",
+    "opt-fashion": "แฟชั่น",
+    "opt-fitness": "สุขภาพ / ฟิตเนส",
+    "opt-parenting": "เลี้ยงลูก / ครอบครัว",
+    "opt-finance": "การเงิน / การลงทุน",
+    "opt-home": "แต่งบ้าน / จัดสวน",
+    "opt-pet": "สัตว์เลี้ยง / ไลฟ์สไตล์",
+    "opt-awareness": "การรับรู้ (Awareness)",
+    "opt-engagement": "การมีส่วนร่วม (Engagement)",
+    "opt-leads": "ความเชื่อมั่น / รายชื่อสนใจ",
+    "opt-sales": "ยอดขาย / ปิดการขาย"
+  }
+};
+
+const roleTranslations = {
+  en: {reviewer:"Reviewer",educator:"Educator",lifestyle:"Lifestyle",storyteller:"Storyteller",expert:"Expert",community:"Community",live_host:"Live Host",affiliate:"Affiliate"},
+  th: {reviewer:"ผู้รีวิว/ป้ายยา",educator:"ผู้ให้ความรู้",lifestyle:"เน้นไลฟ์สไตล์",storyteller:"นักเล่าเรื่อง",expert:"ผู้เชี่ยวชาญ",community:"คอมมูนิตี้",live_host:"ไลฟ์สตรีมเมอร์",affiliate:"นักปิดยอดขาย"}
+};
+
+const commerceTranslations = {
+  en: {affiliate:"Affiliate",shop:"TikTok Shop",live:"Live Host"},
+  th: {affiliate:"ระบบพันธมิตร (Affiliate)",shop:"หน้าร้าน (TikTok Shop)",live:"ไลฟ์สดคอมเมิร์ซ (Live)"}
+};
+
+const confidenceTranslations = {
+  en: {estimated:"Estimated",live:"Live"},
+  th: {estimated:"ค่าโดยประเมิน",live:"ข้อมูลสดจริง"}
+};
+
+const platformSignals = {
+  en: {
+    webUrl: "Positioning, product pages, SEO promise, pricing, proof points",
+    facebookUrl: "Community tone, long-copy storytelling, comments, local trust",
+    youtubeUrl: "Long-form scripts, chapters, retention hooks, education depth",
+    tiktokUrl: "Short-form hooks, scene beats, creator-native language, CTA rhythm",
+    instagramUrl: "Visual identity, reels, story highlights, lifestyle framing",
+    xUrl: "Real-time opinions, concise messaging, topics, controversy risk"
+  },
+  th: {
+    webUrl: "การจัดตำแหน่งแบรนด์, หน้าสินค้า, คำสัญญา SEO, โครงสร้างราคา, และจุดยืนความน่าเชื่อถือ",
+    facebookUrl: "น้ำเสียงคอมมูนิตี้, การเล่าเรื่องแบบยาว, ความคิดเห็นตอบโต้, และความไว้วางใจในท้องถิ่น",
+    youtubeUrl: "สคริปต์วิดีโอยาว, สารบัญบท, เทคนิคตรึงคนดู, และความลึกในการให้ข้อมูลความรู้",
+    tiktokUrl: "การเปิดหัวดึงความสนใจ, จังหวะตัดต่อ, ภาษาเนทีฟแบบครีเอเตอร์, และกลไกปุ่มกด",
+    instagramUrl: "เอกลักษณ์ภาพลักษณ์, คลิปสั้น Reels, สตอรี่ไฮไลท์, และการจัดวางไลฟ์สไตล์",
+    xUrl: "ความคิดเห็นเรียลไทม์, ข้อความหลักที่สั้นกระชับ, ประเด็นร้อน, และความเสี่ยงต่อการเกิดดราม่า"
+  }
+};
+
+function getLang() {
+  return document.body.classList.contains("th") ? "th" : "en";
+}
+
+function setLanguage(lang) {
+  document.body.classList.toggle("th", lang === "th");
+  document.getElementById("lang-btn-text").textContent = lang === "en" ? "EN / TH" : "TH / EN";
+  localStorage.setItem("lang", lang);
+  
+  // translate elements
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (i18n[lang] && i18n[lang][key]) {
+      el.innerHTML = i18n[lang][key];
+    }
+  });
+  
+  // translate placeholders
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if (i18n[lang] && i18n[lang][key]) {
+      el.setAttribute("placeholder", i18n[lang][key]);
+    }
+  });
+  
+  // Update category select options
+  const categorySelect = document.getElementById("category");
+  const currentCategory = categorySelect.value;
+  categorySelect.innerHTML = "";
+  const catOptions = [
+    {val: "beauty", key: "opt-beauty"},
+    {val: "food", key: "opt-food"},
+    {val: "tech", key: "opt-tech"},
+    {val: "fashion", key: "opt-fashion"},
+    {val: "fitness", key: "opt-fitness"},
+    {val: "parenting", key: "opt-parenting"},
+    {val: "finance", key: "opt-finance"},
+    {val: "home", key: "opt-home"},
+    {val: "pet", key: "opt-pet"}
+  ];
+  catOptions.forEach(opt => {
+    const option = document.createElement("option");
+    option.value = opt.val;
+    option.textContent = i18n[lang][opt.key] || opt.val;
+    categorySelect.appendChild(option);
+  });
+  categorySelect.value = currentCategory;
+  
+  // Update objective select options
+  const objectiveSelect = document.getElementById("objective");
+  const currentObjective = objectiveSelect.value;
+  objectiveSelect.innerHTML = "";
+  const objOptions = [
+    {val: "awareness", key: "opt-awareness"},
+    {val: "engagement", key: "opt-engagement"},
+    {val: "leads", key: "opt-leads"},
+    {val: "sales", key: "opt-sales"}
+  ];
+  objOptions.forEach(opt => {
+    const option = document.createElement("option");
+    option.value = opt.val;
+    option.textContent = i18n[lang][opt.key] || opt.val;
+    objectiveSelect.appendChild(option);
+  });
+  objectiveSelect.value = currentObjective;
+
+  // re-translate theme toggle
+  updateThemeIcon();
+  
+  // update weights labels & displays
+  updateWeightsDisplay();
+  
+  // Re-run matching so the cards translate in-place!
+  if (!document.getElementById("results").classList.contains("hidden")) {
+    matchCreators();
+  }
+}
+
+function toggleLanguage() {
+  const currentLang = getLang();
+  const newLang = currentLang === "en" ? "th" : "en";
+  setLanguage(newLang);
+}
+
+const objectiveLabels = {
+  en: {awareness:"Awareness",engagement:"Engagement",leads:"Leads / trust",sales:"Sales / conversion"},
+  th: {awareness:"การรับรู้",engagement:"การมีส่วนร่วม",leads:"ความเชื่อมั่น / ผู้สนใจ",sales:"ยอดขาย / ปิดการขาย"}
+};
 
 function scrollToForm(){document.getElementById("form").scrollIntoView({behavior:"smooth"});}
 function getPlatformContext(){return platforms.map(([id,name,signal])=>({id,name,signal,url:document.getElementById(id).value.trim()})).filter(p=>p.url);}
 function runDemo(){
+  const lang = getLang();
   document.getElementById("category").value="beauty";
   document.getElementById("objective").value="sales";
   document.getElementById("webUrl").value="https://example.com/skincare";
@@ -588,7 +889,10 @@ function runDemo(){
   document.getElementById("tiktokUrl").value="https://tiktok.com/@example-skincare";
   document.getElementById("instagramUrl").value="https://instagram.com/example-skincare";
   document.getElementById("xUrl").value="https://x.com/example-skincare";
-  document.getElementById("brief").value="A clean skincare brand for sensitive-skin consumers aged 18-35. The campaign objective is to build trust and drive conversion through product reviews, education, affiliate links, and live commerce.";
+  
+  document.getElementById("brief").value = lang === "th"
+    ? "แบรนด์สกินแคร์ออร์แกนิกสำหรับกลุ่มผู้บริโภคผิวบอบบางแพ้ง่ายอายุ 18-35 ปี เป้าหมายของแคมเปญคือการสร้างความน่าเชื่อถือและขับเคลื่อนยอดขายผ่านการรีวิวผลิตภัณฑ์ การให้ข้อมูลเชิงลึก การใช้ลิงก์พันธมิตร (Affiliate) และการทำ Live Commerce"
+    : "A clean skincare brand for sensitive-skin consumers aged 18-35. The campaign objective is to build trust and drive conversion through product reviews, education, affiliate links, and live commerce.";
   
   // Reset weights to defaults on demo run
   document.getElementById("w-relevance").value = "25";
@@ -665,13 +969,18 @@ function toggleTheme() {
 
 function updateThemeIcon() {
   const isDark = document.body.classList.contains("dark");
+  const lang = getLang();
   document.getElementById("theme-btn-icon").textContent = isDark ? "☀️" : "🌙";
-  document.getElementById("theme-btn-text").textContent = isDark ? "Light Mode" : "Dark Mode";
+  document.getElementById("theme-btn-text").textContent = isDark 
+    ? (lang === "th" ? "โหมดสว่าง" : "Light Mode") 
+    : (lang === "th" ? "โหมดมืด" : "Dark Mode");
 }
 
 // State Persistence via URL Hash
 function copyConsoleLink() {
+  const lang = getLang();
   const state = {
+    lang: lang,
     cat: document.getElementById("category").value,
     obj: document.getElementById("objective").value,
     brief: document.getElementById("brief").value,
@@ -695,8 +1004,10 @@ function copyConsoleLink() {
   const payload = btoa(unescape(encodeURIComponent(JSON.stringify(state))));
   const shareUrl = window.location.origin + window.location.pathname + "#state=" + payload;
   
+  const alertText = lang === "th" ? "คัดลอกลิงก์แคมเปญไปยังคลิปบอร์ดแล้ว!" : "Shareable Console Link copied to clipboard!";
+  
   navigator.clipboard.writeText(shareUrl).then(() => {
-    alert("Shareable Console Link copied to clipboard!");
+    alert(alertText);
   }).catch(err => {
     console.error("Could not copy link: ", err);
     const tempInput = document.createElement("input");
@@ -705,7 +1016,7 @@ function copyConsoleLink() {
     tempInput.select();
     document.execCommand("copy");
     document.body.removeChild(tempInput);
-    alert("Shareable Console Link copied!");
+    alert(alertText);
   });
 }
 
@@ -736,6 +1047,9 @@ function loadStateFromUrl() {
         if (state.w.saf !== undefined) document.getElementById("w-safety").value = state.w.saf;
         updateWeightsDisplay();
       }
+      
+      const targetLang = state.lang || localStorage.getItem("lang") || "en";
+      setLanguage(targetLang);
       matchCreators();
     } catch (e) {
       console.error("Failed to parse state from URL hash", e);
@@ -745,39 +1059,50 @@ function loadStateFromUrl() {
 
 // Data Exports
 function exportCSV() {
+  const lang = getLang();
   if (!currentShortlist || currentShortlist.length === 0) {
-    alert("No results to export yet.");
+    alert(lang === "th" ? "ยังไม่มีผลลัพธ์การประเมินให้ส่งออก" : "No results to export yet.");
     return;
   }
-  const headers = ["Rank", "Username", "Display Name", "Match Score", "Followers", "Engagement Rate", "Roles", "Commerce Capabilities", "Safety Score", "Bio"];
-  const rows = currentShortlist.map((c, i) => [
-    i + 1,
-    `@${c.u}`,
-    c.n,
-    c.score,
-    c.followers,
-    `${c.er}%`,
-    c.roles.join("/"),
-    c.commerce.join("/"),
-    c.safety,
-    c.bio.replace(/"/g, '""')
-  ]);
   
-  let csvContent = "data:text/csv;charset=utf-8," 
+  const headers = lang === "th" 
+    ? ["อันดับ", "ชื่อผู้ใช้", "ชื่อแสดง", "คะแนนจับคู่", "ผู้ติดตาม", "อัตราการมีส่วนร่วม", "บทบาทครีเอเตอร์", "กลไก Commerce", "คะแนนความปลอดภัย", "คำแนะนำตัว (Bio)"]
+    : ["Rank", "Username", "Display Name", "Match Score", "Followers", "Engagement Rate", "Roles", "Commerce Capabilities", "Safety Score", "Bio"];
+    
+  const rows = currentShortlist.map((c, i) => {
+    const bio = lang === "th" ? (c.bio_th || c.bio_en) : c.bio_en;
+    const translatedCommerce = c.commerce.map(x => commerceTranslations[lang]?.[x] || x);
+    const translatedRoles = c.roles.map(x => roleTranslations[lang]?.[x] || x);
+    return [
+      i + 1,
+      `@${c.u}`,
+      c.n,
+      c.score,
+      c.followers,
+      `${c.er}%`,
+      translatedRoles.join("/"),
+      translatedCommerce.join("/"),
+      c.safety,
+      bio.replace(/"/g, '""')
+    ];
+  });
+  
+  let csvContent = "data:text/csv;charset=utf-8,\uFEFF" 
     + [headers.map(h => `"${h}"`).join(","), ...rows.map(r => r.map(v => `"${v}"`).join(","))].join("\n");
   
   const encodedUri = encodeURI(csvContent);
   const link = document.createElement("a");
   link.setAttribute("href", encodedUri);
-  link.setAttribute("download", "kol_match_shortlist.csv");
+  link.setAttribute("download", lang === "th" ? "รายชื่อครีเอเตอร์จับคู่แบรนด์.csv" : "kol_match_shortlist.csv");
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
 }
 
 function exportJSON() {
+  const lang = getLang();
   if (!currentShortlist || currentShortlist.length === 0) {
-    alert("No campaign results to export yet.");
+    alert(lang === "th" ? "ยังไม่มีผลลัพธ์การประเมินแคมเปญให้ส่งออก" : "No campaign results to export yet.");
     return;
   }
   const category = document.getElementById("category").value;
@@ -800,7 +1125,8 @@ function exportJSON() {
       commerce: c.commerce,
       roles: c.roles,
       score_breakdown: c.subs,
-      bio: c.bio
+      bio_en: c.bio_en,
+      bio_th: c.bio_th
     })),
     campaign_planner: ctx.map(p => {
       const stages = platformStageMatrix(p.id).map(stageKey => {
@@ -858,20 +1184,59 @@ function renderInsight(list){
   const ctx=getPlatformContext();
   const obj=document.getElementById("objective").value;
   const commerceReady=list.filter(c=>c.commerce.length).length;
-  const bits=[
+  const lang=getLang();
+  
+  const objLabel = objectiveLabels[lang]?.[obj] || objectiveLabels["en"]?.[obj] || obj;
+  
+  const bits = lang === "th" ? [
+    `<span class="ichip">ตรวจพบช่องทางแบรนด์ <b>${ctx.length}</b> แพลตฟอร์ม</span>`,
+    `<span class="ichip">วัตถุประสงค์แคมเปญ: <b>${objLabel}</b></span>`,
+    `<span class="ichip">ครีเอเตอร์ที่ผ่านเกณฑ์ <b>${list.length}</b> คน</span>`
+  ] : [
     `<span class="ichip"><b>${ctx.length}</b> channel${ctx.length===1?"":"s"} detected</span>`,
-    `<span class="ichip"><b>${objectiveLabels[obj]||obj}</b> objective</span>`,
+    `<span class="ichip"><b>${objLabel}</b> objective</span>`,
     `<span class="ichip"><b>${list.length}</b> eligible creator${list.length===1?"":"s"}</span>`
   ];
-  if(obj==="sales") bits.push(`<span class="ichip"><b>${commerceReady}</b> commerce-capable prioritized</span>`);
-  if(list[0]) bits.push(`<span class="ichip">Top match <b>${list[0].score}</b> · @${list[0].u}</span>`);
+  
+  if(obj==="sales") {
+    bits.push(lang === "th" 
+      ? `<span class="ichip">พร้อมทำ Commerce <b>${commerceReady}</b> คน</span>`
+      : `<span class="ichip"><b>${commerceReady}</b> commerce-capable prioritized</span>`
+    );
+  }
+  if(list[0]) {
+    bits.push(lang === "th"
+      ? `<span class="ichip">คะแนนสูงสุด <b>${list[0].score}</b> · @${list[0].u}</span>`
+      : `<span class="ichip">Top match <b>${list[0].score}</b> · @${list[0].u}</span>`
+    );
+  }
   document.getElementById("insight").innerHTML=bits.join("");
 }
 
 function renderContext(){
   const ctx=getPlatformContext();
+  const lang=getLang();
   document.getElementById("platformCount").textContent=ctx.length;
-  document.getElementById("contextBox").innerHTML = `<h3>Platform-aware brand research layer</h3><p class="small">Before recommending a KOL team, production research ingests each channel separately, pulls scripts, transcripts, captions and comments, breaks video into scene beats, and compares storytelling patterns against creator-native formats.</p><div class="context-list">${ctx.length?ctx.map(p=>`<div class="context-item"><strong>${platformMeta[p.id]?`<span class="pchip pchip-${platformMeta[p.id].key}" style="margin-right:7px">${platformMeta[p.id].code}</span>`:""}${p.name}</strong><p class="small">${p.signal}</p></div>`).join(""):`<div class="context-item"><strong>No platform URLs yet</strong><p class="small">Add channels to improve context separation.</p></div>`}</div>`;
+  
+  const header = lang === "th" ? "ระบบวิเคราะห์แบรนด์และบริบทแพลตฟอร์ม" : "Platform-aware brand research layer";
+  const desc = lang === "th" 
+    ? "ก่อนคัดเลือกและจับคู่ทีมครีเอเตอร์ ระบบงานจริงจะประเมินสัญญาณแบรนด์แยกตามแต่ละช่องทาง ค้นหาสคริปต์ คำบรรยายคลิป คอมเมนต์ และพฤติกรรมการมีส่วนร่วมแยกตามความเหมาะสมของช่องทาง"
+    : "Before recommending a KOL team, production research ingests each channel separately, pulls scripts, transcripts, captions and comments, breaks video into scene beats, and compares storytelling patterns against creator-native formats.";
+  
+  let listHtml = "";
+  if (ctx.length) {
+    listHtml = ctx.map(p => {
+      const meta = platformMeta[p.id] || {code:"?", key:"website"};
+      const signalText = platformSignals[lang]?.[p.id] || p.signal;
+      return `<div class="context-item"><strong><span class="pchip pchip-${meta.key}" style="margin-right:7px">${meta.code}</span>${p.name}</strong><p class="small">${signalText}</p></div>`;
+    }).join("");
+  } else {
+    listHtml = lang === "th"
+      ? `<div class="context-item"><strong>ยังไม่มีข้อมูลลิงก์ช่องทางแบรนด์</strong><p class="small">ใส่ลิงก์ช่องทางของแบรนด์ด้านบนเพื่อเริ่มประเมินแยกบริบทอย่างเป็นอิสระ</p></div>`
+      : `<div class="context-item"><strong>No platform URLs yet</strong><p class="small">Add channels to improve context separation.</p></div>`;
+  }
+  
+  document.getElementById("contextBox").innerHTML = `<h3>${header}</h3><p class="small">${desc}</p><div class="context-list">${listHtml}</div>`;
 }
 
 function render(list){
@@ -888,10 +1253,30 @@ function render(list){
 function card(c,i){
   const rank=String(i+1).padStart(2,"0");
   const lead=i===0;
-  const meta=`<span>${c.n}</span><span>${c.followers.toLocaleString()} followers <small class="mono font-9" style="opacity:0.75">(Conf: 92%)</small></span><span>${c.er}% ER <small class="mono font-9" style="opacity:0.75">(Conf: 94%)</small></span>`;
-  const chips=`${c.commerce.map(x=>`<span class="chip">${x}</span>`).join("")}<span class="chip role">${c.roles.join(" / ")}</span>`;
+  const lang=getLang();
   
-  const tooltips = {
+  const labelFollowers = lang === "th" ? "ผู้ติดตาม" : "followers";
+  const labelConf = lang === "th" ? "ความมั่นใจ" : "Conf";
+  const labelTopPick = lang === "th" ? "แนะนำอันดับหนึ่ง" : "Top pick";
+  const labelMatch = lang === "th" ? "คะแนนรวม" : "Match";
+  const bio = lang === "th" ? (c.bio_th || c.bio_en) : c.bio_en;
+  
+  const meta=`<span>${c.n}</span><span>${c.followers.toLocaleString()} ${labelFollowers} <small class="mono font-9" style="opacity:0.75">(${labelConf}: 92%)</small></span><span>${c.er}% ER <small class="mono font-9" style="opacity:0.75">(${labelConf}: 94%)</small></span>`;
+  
+  const translatedCommerce = c.commerce.map(x => commerceTranslations[lang]?.[x] || x);
+  const translatedRoles = c.roles.map(x => roleTranslations[lang]?.[x] || x);
+  
+  const chips=`${translatedCommerce.map(x=>`<span class="chip">${x}</span>`).join("")}<span class="chip role">${translatedRoles.join(" / ")}</span>`;
+  
+  const tooltips = lang === "th" ? {
+    Relevance: "วัดความตรงสายของหมวดหมู่ครีเอเตอร์และหมวดหมู่ของแคมเปญแบรนด์",
+    Audience: "ความสอดคล้องด้านประชากรศาสตร์และที่อยู่ผู้ติดตาม (ความมั่นใจ: สูง)",
+    Objective: "ความสอดคล้องของขีดความสามารถครีเอเตอร์และวัตถุประสงค์ของแคมเปญ",
+    Style: "สไตล์การตัดต่อ จังหวะการเล่าคลิปสั้น และการใช้สคริปต์ในวิดีโอ",
+    Performance: "ประสิทธิภาพการมีส่วนร่วมอิงตามสัดส่วนยอดการดูเฉลี่ย",
+    Commerce: "ความสามารถและกลไกกระตุ้นการขาย ตะกร้าสินค้า และการไลฟ์สดคอมเมิร์ซ",
+    Safety: "คะแนนประเมินความเป็นมืออาชีพ การเปิดเผยโฆษณา และความเสี่ยงต่อภาพลักษณ์แบรนด์"
+  } : {
     Relevance: "Matches creator category with campaign category",
     Audience: "Demographic alignment & geographic density (Confidence: High)",
     Objective: "Fit of creator capabilities with campaign goal",
@@ -900,11 +1285,29 @@ function card(c,i){
     Commerce: "E-commerce, shop, affiliate & live selling capability",
     Safety: "Professionalism, disclosure & content safety risk score"
   };
+
+  const metricLabels = lang === "th" ? {
+    Relevance: "ความตรงสาย",
+    Audience: "ผู้ติดตามตรงเป้า",
+    Objective: "ตอบวัตถุประสงค์",
+    Style: "สไตล์เข้ากัน",
+    Performance: "ประสิทธิภาพช่อง",
+    Commerce: "กลไกป้ายยา",
+    Safety: "ความปลอดภัย"
+  } : {
+    Relevance: "Relevance",
+    Audience: "Audience",
+    Objective: "Objective",
+    Style: "Style",
+    Performance: "Performance",
+    Commerce: "Commerce",
+    Safety: "Safety"
+  };
   
   const bars=Object.entries(c.subs).map(([k,v])=>`
     <div class="metric" title="${tooltips[k] || ''}">
       <div class="mlab">
-        <span>${k} <span class="info-trigger" style="font-size:10px; cursor:help; color:var(--muted)">ⓘ</span></span>
+        <span>${metricLabels[k] || k} <span class="info-trigger" style="font-size:10px; cursor:help; color:var(--muted)">ⓘ</span></span>
         <b>${v}</b>
       </div>
       <div class="track"><span style="width:${v}%"></span></div>
@@ -913,43 +1316,69 @@ function card(c,i){
   
   const initials = c.n.split("|")[0].trim().substring(0, 2).toUpperCase();
   
+  const rationaleText = lang === "th"
+    ? "ความเหมาะสมระดับหมวดหมู่ดีเยี่ยม สไตล์การเล่าเรื่องสอดคล้องกับพฤติกรรมผู้ใช้ของแพลตฟอร์มเป้าหมาย มีอัตราการมีส่วนร่วมคุณภาพดี และมีบทบาทที่รองรับแคมเปญเป้าหมายได้อย่างมีประสิทธิภาพ อย่างไรก็ดีการคัดเลือกขั้นสุดท้ายควรผ่านทีมงานร่วมประเมินความพึงพอใจอีกครั้ง"
+    : "Strong category fit, platform-aware style alignment, solid engagement quality, and a role mix that supports the selected objective. Final creator selection should still go through human review.";
+  
   return `<article class="creator${lead?" lead":""}">
     <div class="creator-head">
       <div class="rank">${rank}</div>
       <div class="avatar-circle" style="width:40px; height:40px; border-radius:50%; background:var(--accent-soft); color:var(--accent-ink); display:grid; place-items:center; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:14px; flex-shrink:0;">${initials}</div>
       <div class="creator-id">
-        <h3><a href="${c.url}" target="_blank" rel="noopener">@${c.u}</a>${lead?'<span class="lead-tag">Top pick</span>':""}</h3>
+        <h3><a href="${c.url}" target="_blank" rel="noopener">@${c.u}</a>${lead?`<span class="lead-tag">${labelTopPick}</span>`:""}</h3>
         <div class="creator-meta">${meta}</div>
       </div>
-      <div class="score-badge"><div class="score-num">${c.score}</div><div class="score-cap">Match</div></div>
+      <div class="score-badge"><div class="score-num">${c.score}</div><div class="score-cap">${labelMatch}</div></div>
     </div>
-    <p class="bio">${c.bio}</p>
+    <p class="bio">${bio}</p>
     <div class="chips">${chips}</div>
     <div class="breakdown">${bars}</div>
-    <p class="rationale">Strong category fit, platform-aware style alignment, solid engagement quality, and a role mix that supports the selected objective. Final creator selection should still go through human review.</p>
+    <p class="rationale">${rationaleText}</p>
   </article>`;
 }
 
 function analysisRole(platformId){
+  const lang = getLang();
   const roles = {
-    webUrl: "Website is the brand's owned proof layer. Use it for positioning, claims, proof points, product education, review modules, and conversion support.",
-    facebookUrl: "Facebook is a community and trust layer. Use it to understand objections, comment language, long-copy storytelling, and local credibility.",
-    youtubeUrl: "YouTube is the deep consideration layer. Use it for long-form explanations, tutorials, creator tests, chapters, and objection handling.",
-    tiktokUrl: "TikTok is the fast discovery and action layer. Use it for native hooks, scene pacing, creator language, affiliate cues, and live commerce.",
-    instagramUrl: "Instagram is the visual proof layer. Use it for lifestyle framing, reels, carousels, story highlights, and aesthetic consistency.",
-    xUrl: "X is the conversation risk and message testing layer. Use it to test concise claims, monitor replies, and capture sensitive objections."
+    en: {
+      webUrl: "Website is the brand's owned proof layer. Use it for positioning, claims, proof points, product education, review modules, and conversion support.",
+      facebookUrl: "Facebook is a community and trust layer. Use it to understand objections, comment language, long-copy storytelling, and local credibility.",
+      youtubeUrl: "YouTube is the deep consideration layer. Use it for long-form explanations, tutorials, creator tests, chapters, and objection handling.",
+      tiktokUrl: "TikTok is the fast discovery and action layer. Use it for native hooks, scene pacing, creator language, affiliate cues, and live commerce.",
+      instagramUrl: "Instagram is the visual proof layer. Use it for lifestyle framing, reels, carousels, story highlights, and aesthetic consistency.",
+      xUrl: "X is the conversation risk and message testing layer. Use it to test concise claims, monitor replies, and capture sensitive objections."
+    },
+    th: {
+      webUrl: "เว็บไซต์คือด่านสร้างความน่าเชื่อถือของแบรนด์ (Owned Proof) เหมาะสำหรับแสดงจุดยืน การรับประกัน บริการ/สินค้า การให้ความรู้พื้นฐาน และตอบคำถามคำถามเชิงลึก",
+      facebookUrl: "เฟซบุ๊กคือด่านการสื่อสารและชุมชนในไทย (Community & Trust) เหมาะสำหรับตอบข้อโต้แย้งในคอมเมนต์ เขียนเรื่องราวยาวๆ และสร้างความน่าเชื่อถือท้องถิ่น",
+      youtubeUrl: "ยูทูปคือด่านการเปรียบเทียบเชิงลึก (Deep Consideration) เหมาะสำหรับทำวิดีโอเจาะลึกวิธีการใช้งาน สอนวิธีแก้ปัญหาอย่างละเอียด และเปรียบเทียบให้เห็นข้อดีข้อเสีย",
+      tiktokUrl: "ติ๊กต็อกคือด่านสร้างการรับรู้และความบันเทิงที่ฉับไว (Fast Discovery & Action) เหมาะสำหรับใช้ Hook สั้นๆ ทรานซิชันที่เร็ว แปะลิงก์ตะกร้า และทำไลฟ์สดคอมเมิร์ซ",
+      instagramUrl: "อินสตาแกรมคือด่านภาพลักษณ์ที่สวยงามเชิงไลฟ์สไตล์ (Visual Proof) เหมาะสำหรับแสดงดีไซน์ โทนสี สินค้าผ่านชีวิตประจำวัน สตอรี่และ Reels สั้นๆ",
+      xUrl: "เอ็กซ์คือด่านวัดข้อความและความคิดเห็นแบบเรียลไทม์ (Conversation Risk & Message Testing) เหมาะสำหรับทดลองโพสต์ข้อความสั้นๆ จับกระแสวิพากษ์วิจารณ์ และเช็คแนวโน้มดราม่า"
+    }
   };
-  return roles[platformId] || "Use this source as an additional brand-context signal.";
+  return roles[lang]?.[platformId] || (lang === "th" ? "ดึงข้อมูลจากแหล่งนี้เพื่อนำมาใช้เป็นสัญญาณประเมินภาพรวมแบรนด์เพิ่มเติม" : "Use this source as an additional brand-context signal.");
 }
 
 function stageConfig(){
-  return {
-    awareness: {label:"Awareness",roles:["storyteller","lifestyle","reviewer"],goal:"Make the audience notice the problem and remember the brand context."},
-    trust: {label:"Trust building",roles:["educator","expert","community","reviewer"],goal:"Build credibility, answer objections, and make the category feel safer."},
-    review: {label:"Review burst",roles:["reviewer","educator","community"],goal:"Create practical proof through creator testing, comparison, or routine content."},
-    conversion: {label:"Conversion",roles:["affiliate","reviewer","educator"],goal:"Move interested audiences to a measurable action such as product page, shop, or lead form."},
-    live: {label:"Live commerce",roles:["live_host","affiliate","reviewer"],goal:"Create a concentrated selling window with objection handling and urgency."}
+  const lang = getLang();
+  const stages = {
+    en: {
+      awareness: {label:"Awareness",roles:["storyteller","lifestyle","reviewer"],goal:"Make the audience notice the problem and remember the brand context."},
+      trust: {label:"Trust building",roles:["educator","expert","community","reviewer"],goal:"Build credibility, answer objections, and make the category feel safer."},
+      review: {label:"Review burst",roles:["reviewer","educator","community"],goal:"Create practical proof through creator testing, comparison, or routine content."},
+      conversion: {label:"Conversion",roles:["affiliate","reviewer","educator"],goal:"Move interested audiences to a measurable action such as product page, shop, or lead form."},
+      live: {label:"Live commerce",roles:["live_host","affiliate","reviewer"],goal:"Create a concentrated selling window with objection handling and urgency."}
+    },
+    th: {
+      awareness: {label:"การรับรู้แบรนด์",roles:["storyteller","lifestyle","reviewer"],goal:"ทำให้กลุ่มเป้าหมายตระหนักถึงปัญหา สังเกตเห็นแบรนด์ และเข้าใจบริบทสินค้า"},
+      trust: {label:"สร้างความไว้วางใจ",roles:["educator","expert","community","reviewer"],goal:"สร้างความน่าเชื่อถือ ตอบคำถามข้อโต้แย้งที่พบบ่อย และทำให้ลูกค้ามั่นใจในสินค้า"},
+      review: {label:"รีวิวเชิงป้ายยา",roles:["reviewer","educator","community"],goal:"สร้างสังคมแห่งการใช้งานจริงผ่านผู้ใช้เปรียบเทียบ รูทีนประจำวัน หรือสาธิตวิธีใช้"},
+      conversion: {label:"การปิดการขาย",roles:["affiliate","reviewer","educator"],goal:"นำทางกลุ่มผู้สนใจไปสู่หน้าการชำระเงิน ตะกร้าสินค้า หรือสมัครรายชื่อกรอกแบบฟอร์ม"},
+      live: {label:"ไลฟ์สดคอมเมิร์ซ",roles:["live_host","affiliate","reviewer"],goal:"สร้างช่วงเวลาขายเร่งด่วน ตอบคำถามสดๆ คูปองจำกัดเวลา เพื่อเร่งการตัดสินใจซื้อ"}
+    }
   };
+  return stages[lang] || stages["en"];
 }
 
 function platformStageMatrix(platformId){
@@ -983,52 +1412,133 @@ function creatorForStage(platformId, stageKey, list){
 
 function stageContentPlan(platformId, stageKey){
   const category = document.getElementById("category").value;
-  const product = category === "beauty" ? "sensitive-skin skincare" : `${category} offer`;
-  const plans = {
-    webUrl: {
-      awareness: {format:"SEO education section",hook:`What people should know before choosing ${product}.`,execution:"Use website copy to define the problem, audience, category language, and proof points. This supports discovery but does not need a creator performance format.",cta:"Read the guide"},
-      trust: {format:"Proof and FAQ block",hook:`Why this ${product} is safe enough to consider.`,execution:"Use creator quotes, expert proof, FAQ objections, ingredient/feature explanation, and social proof modules.",cta:"Compare proof points"},
-      review: {format:"Creator review module",hook:`Real creator test: what changed after using ${product}.`,execution:"Embed review snippets, before/after notes, routine steps, creator quote, and link to full creator content.",cta:"See the creator review"}
+  const lang = getLang();
+  
+  const products = {
+    en: {
+      beauty: "sensitive-skin skincare",
+      food: "food & cafe menu",
+      tech: "new gadget & device",
+      fashion: "fashion & OOTD items",
+      fitness: "fitness & health supplements",
+      parenting: "safe parenting product",
+      finance: "finance & investment tool",
+      home: "home & decor product",
+      pet: "premium pet food & care item"
     },
-    facebookUrl: {
-      awareness: {format:"Community story post",hook:`A relatable pain point before discovering ${product}.`,execution:"Open with a real-life situation, use long-copy storytelling, and invite comments from people with similar concerns.",cta:"Comment if this happens to you"},
-      trust: {format:"Objection-handling post",hook:`The top concerns people ask before trying ${product}.`,execution:"Answer comment-driven objections about safety, price, usage, timing, and who should avoid it.",cta:"Ask a question in the comments"},
-      review: {format:"Creator testimonial thread",hook:`Three creators tested the routine in different situations.`,execution:"Bundle several creator experiences into one post and compare different use cases.",cta:"Save this review checklist"},
-      conversion: {format:"Soft offer post",hook:`If you are ready to try it, start with this simple set.`,execution:"Use a warm offer, FAQ recap, link to landing page, and comment-based follow-up.",cta:"Open the starter set"}
-    },
-    youtubeUrl: {
-      awareness: {format:"Category explainer",hook:`The beginner guide to choosing ${product}.`,execution:"Use chapters for problem framing, common mistakes, category education, and decision criteria.",cta:"Watch the full guide"},
-      trust: {format:"Deep-dive tutorial",hook:`What actually matters when comparing ${product}.`,execution:"Use transcript-backed education, expert comparison, and time-stamped proof segments.",cta:"Download the checklist"},
-      review: {format:"Long-form creator review",hook:`I tested this routine for a realistic use case.`,execution:"Show setup, usage, objections, visible evidence, and who should or should not buy.",cta:"Open the product comparison"}
-    },
-    tiktokUrl: {
-      awareness: {format:"Hook-led short video",hook:`Stop buying ${product} before checking these three signs.`,execution:"Scene 1 hook, scene 2 pain point, scene 3 quick demo, scene 4 memorable takeaway.",cta:"Follow for the full routine"},
-      review: {format:"Fast creator test",hook:`I tried this so you do not have to guess.`,execution:"Use close-ups, captions, quick proof, creator reaction, and one clear comparison point.",cta:"Save this before buying"},
-      conversion: {format:"Affiliate/shop video",hook:`If your problem is this, start with this product first.`,execution:"Show problem fit, product use, proof cue, price/value cue, and shop/affiliate CTA.",cta:"Tap the product link"},
-      live: {format:"Live selling segment",hook:`Live demo plus real-time objection handling.`,execution:"Use a creator host to demo, compare, answer questions, and stack urgency during a live window.",cta:"Join the live session"}
-    },
-    instagramUrl: {
-      awareness: {format:"Lifestyle reel",hook:`A routine that looks easy, premium, and repeatable.`,execution:"Use aesthetic framing, routine visuals, product texture, and mood-led storytelling.",cta:"Save this routine"},
-      trust: {format:"Carousel proof post",hook:`What to check before adding this to your routine.`,execution:"Use slide-by-slide proof: problem, ingredient/feature, user fit, creator note, FAQ.",cta:"Share with a friend"},
-      review: {format:"Reels review",hook:`A creator's routine in 30 seconds.`,execution:"Show steps, texture, lifestyle moment, and concise creator verdict.",cta:"Save for later"},
-      conversion: {format:"Story highlight flow",hook:`Ready to try the routine? Start here.`,execution:"Use story frames for proof, FAQ, creator quote, and link sticker.",cta:"Tap the link sticker"}
-    },
-    xUrl: {
-      awareness: {format:"Message test thread",hook:`A concise claim about ${product} that invites reaction.`,execution:"Test short claims and monitor replies to identify language, confusion, and objections.",cta:"Reply with your concern"},
-      trust: {format:"Objection capture thread",hook:`What people still question before trying ${product}.`,execution:"Use replies as research input for creator scripts, FAQ content, and risk monitoring.",cta:"Add the objection we missed"}
+    th: {
+      beauty: "สกินแคร์ผิวบอบบางแพ้ง่าย",
+      food: "เมนูอาหารและเครื่องดื่มคาเฟ่",
+      tech: "อุปกรณ์เทคโนโลยีแก็ดเจ็ตใหม่",
+      fashion: "เสื้อผ้าไอเทมแฟชั่น OOTD",
+      fitness: "ผลิตภัณฑ์เสริมอาหารและฟิตเนส",
+      parenting: "ผลิตภัณฑ์สำหรับเด็กและแม่เลี้ยงลูก",
+      finance: "เครื่องมือบริหารเงินและการลงทุน",
+      home: "สินค้าแต่งบ้านและจัดแต่งสวน",
+      pet: "อาหารและอุปกรณ์ดูแลสัตว์เลี้ยงแสนรัก"
     }
   };
-  return plans[platformId]?.[stageKey] || {format:"Platform content test",hook:"Test the core brand message in this channel.",execution:"Extract native platform signals and adapt creator content to the format.",cta:"Review response"};
+  
+  const product = products[lang]?.[category] || products[lang]["beauty"];
+  
+  const plans = {
+    en: {
+      webUrl: {
+        awareness: {format:"SEO education section",hook:`What people should know before choosing ${product}.`,execution:"Use website copy to define the problem, audience, category language, and proof points. This supports discovery but does not need a creator performance format.",cta:"Read the guide"},
+        trust: {format:"Proof and FAQ block",hook:`Why this ${product} is safe enough to consider.`,execution:"Use creator quotes, expert proof, FAQ objections, ingredient/feature explanation, and social proof modules.",cta:"Compare proof points"},
+        review: {format:"Creator review module",hook:`Real creator test: what changed after using ${product}.`,execution:"Embed review snippets, before/after notes, routine steps, creator quote, and link to full creator content.",cta:"See the creator review"}
+      },
+      facebookUrl: {
+        awareness: {format:"Community story post",hook:`A relatable pain point before discovering ${product}.`,execution:"Open with a real-life situation, use long-copy storytelling, and invite comments from people with similar concerns.",cta:"Comment if this happens to you"},
+        trust: {format:"Objection-handling post",hook:`The top concerns people ask before trying ${product}.`,execution:"Answer comment-driven objections about safety, price, usage, timing, and who should avoid it.",cta:"Ask a question in the comments"},
+        review: {format:"Creator testimonial thread",hook:`Three creators tested the routine in different situations.`,execution:"Bundle several creator experiences into one post and compare different use cases.",cta:"Save this review checklist"},
+        conversion: {format:"Soft offer post",hook:`If you are ready to try it, start with this simple set.`,execution:"Use a warm offer, FAQ recap, link to landing page, and comment-based follow-up.",cta:"Open the starter set"}
+      },
+      youtubeUrl: {
+        awareness: {format:"Category explainer",hook:`The beginner guide to choosing ${product}.`,execution:"Use chapters for problem framing, common mistakes, category education, and decision criteria.",cta:"Watch the full guide"},
+        trust: {format:"Deep-dive tutorial",hook:`What actually matters when comparing ${product}.`,execution:"Use transcript-backed education, expert comparison, and time-stamped proof segments.",cta:"Download the checklist"},
+        review: {format:"Long-form creator review",hook:`I tested this routine for a realistic use case.`,execution:"Show setup, usage, objections, visible evidence, and who should or should not buy.",cta:"Open the product comparison"}
+      },
+      tiktokUrl: {
+        awareness: {format:"Hook-led short video",hook:`Stop buying ${product} before checking these three signs.`,execution:"Scene 1 hook, scene 2 pain point, scene 3 quick demo, scene 4 memorable takeaway.",cta:"Follow for the full routine"},
+        review: {format:"Fast creator test",hook:`I tried this so you do not have to guess.`,execution:"Use close-ups, captions, quick proof, creator reaction, and one clear comparison point.",cta:"Save this before buying"},
+        conversion: {format:"Affiliate/shop video",hook:`If your problem is this, start with this product first.`,execution:"Show problem fit, product use, proof cue, price/value cue, and shop/affiliate CTA.",cta:"Tap the product link"},
+        live: {format:"Live selling segment",hook:`Live demo plus real-time objection handling.`,execution:"Use a creator host to demo, compare, answer questions, and stack urgency during a live window.",cta:"Join the live session"}
+      },
+      instagramUrl: {
+        awareness: {format:"Lifestyle reel",hook:`A routine that looks easy, premium, and repeatable.`,execution:"Use aesthetic framing, routine visuals, product texture, and mood-led storytelling.",cta:"Save this routine"},
+        trust: {format:"Carousel proof post",hook:`What to check before adding this to your routine.`,execution:"Use slide-by-slide proof: problem, ingredient/feature, user fit, creator note, FAQ.",cta:"Share with a friend"},
+        review: {format:"Reels review",hook:`A creator's routine in 30 seconds.`,execution:"Show steps, texture, lifestyle moment, and concise creator verdict.",cta:"Save for later"},
+        conversion: {format:"Story highlight flow",hook:`Ready to try the routine? Start here.`,execution:"Use story frames for proof, FAQ, creator quote, and link sticker.",cta:"Tap the link sticker"}
+      },
+      xUrl: {
+        awareness: {format:"Message test thread",hook:`A concise claim about ${product} that invites reaction.`,execution:"Test short claims and monitor replies to identify language, confusion, and objections.",cta:"Reply with your concern"},
+        trust: {format:"Objection capture thread",hook:`What people still question before trying ${product}.`,execution:"Use replies as research input for creator scripts, FAQ content, and risk monitoring.",cta:"Add the objection we missed"}
+      }
+    },
+    th: {
+      webUrl: {
+        awareness: {format:"หน้าเพจให้ความรู้ SEO",hook:`สิ่งที่ต้องรู้ก่อนตัดสินใจเลือกซื้อ ${product}`,execution:"เขียนบทความบนหน้าเว็บบอกเล่าปัญหาของลูกค้า กลุ่มคนที่มีความเสี่ยง จุดเปรียบเทียบมาตรฐาน เพื่อดึงยอดเสิร์ชออร์แกนิก",cta:"อ่านคู่มือแนะนำ"},
+        trust: {format:"หน้าต่างตอบคำถาม FAQ",hook:`ทำไม ${product} ตัวนี้ถึงปลอดภัยและคุ้มค่าที่สุด`,execution:"นำความเห็นแพทย์/ผู้เชี่ยวชาญ ใบรับรองความปลอดภัย โน้ตตอบข้อโต้แย้งเรื่องความปลอดภัยและคุณสมบัติหลักมาจัดแสดงเป็นบล็อกเด่น",cta:"เปรียบเทียบใบรับรอง"},
+        review: {format:"โมดูลฝังคลิปและคำรีวิว",hook:`รีวิวทดลองใช้จริง: การเปลี่ยนแปลงที่เกิดขึ้นจริงหลังเริ่มใช้ ${product}`,execution:"ฝังคำพูดรีวิวจากครีเอเตอร์, ภาพเปรียบเทียบการใช้งานจริง, วิธีจัดรูทีนการใช้ พร้อมปุ่มกดไปลิงก์ต้นทาง",cta:"ดูรีวิวครีเอเตอร์ทั้งหมด"}
+      },
+      facebookUrl: {
+        awareness: {format:"โพสต์เล่าเรื่องในคอมมูนิตี้",hook:`ปัญหาผิวหน้า/ชีวิตประจำวันที่แสนปวดใจ ก่อนจะเจอ ${product}`,execution:"เปิดหัวโพสต์ด้วยปัญหาที่พบจริง เล่าเรื่องแบบยาวชวนอิน ชวนคนอ่านคอมเมนต์แสดงความเห็นแลกเปลี่ยนปัญหาเดียวกัน",cta:"ร่วมคอมเมนต์ใต้โพสต์"},
+        trust: {format:"โพสต์เคลียร์ความกังวล FAQ",hook:`รวมข้อสงสัยที่พบบ่อยที่สุดก่อนตัดสินใจลอง ${product}`,execution:"ตอบข้อโต้แย้งหลักที่คนมักพิมพ์ถามในช่องคอมเมนต์ เช่น เรื่องส่วนผสม ความคุ้มค่า เหมาะกับใคร หรือใครควรระวัง",cta:"พิมพ์ถามเพิ่มเติมในคอมเมนต์"},
+        review: {format:"โพสต์มัดรวมความเห็นครีเอเตอร์",hook:`เมื่อครีเอเตอร์ 3 สไตล์มาทดลองใช้สัปดาห์เดียวกัน ผลเป็นอย่างไร`,execution:"รวบรวมประสบการณ์ใช้งานที่ต่างกลุ่มคนเข้าไว้ในโพสต์เดียว เปรียบเทียบผลลัพธ์พร้อมทำสรุปเช็คลิสต์แนะนำ",cta:"บันทึกเช็คลิสต์รีวิวนี้"},
+        conversion: {format:"โพสต์แนะนำโปรโมชันเปิดใจ",hook:`หากพร้อมเริ่มลองแล้ว แนะนำให้เริ่มต้นด้วยเซ็ตผลิตภัณฑ์นี้`,execution:"เขียนข้อเสนอที่จริงใจ สรุปคุณค่าเด่นสั้นๆ แปะลิงก์ไปหน้าสั่งซื้อสินค้าพร้อมคูปองส่วนลดทางคอมเมนต์",cta:"สั่งซื้อเซ็ตเริ่มต้น"}
+      },
+      youtubeUrl: {
+        awareness: {format:"วิดีโอเจาะลึกหมวดหมู่",hook:`คู่มือสำหรับมือใหม่ในการเลือกซื้อ ${product}`,execution:"ใช้ระบบแบ่งตอน (Chapters) อธิบายแกนปัญหา ข้อผิดพลาดที่พบบ่อย วิธีเปรียบเทียบ และเกณฑ์การตัดสินใจซื้อ",cta:"รับชมคู่มือฉบับเต็ม"},
+        trust: {format:"คลิปวิดีโอสอนสอนวิธีใช้",hook:`มีอะไรบ้างที่ต้องเช็คเมื่อทำการเปรียบเทียบ ${product}`,execution:"ให้ข้อมูลการใช้สอยจริงจากแพทย์/ผู้รู้ อธิบายคุณสมบัติเคมี/เทคนิค แสดงผลลัพธ์ผ่านกล้องแบบไม่ตัดต่อ",cta:"ดาวน์โหลดเช็คลิสต์ความรู้"},
+        review: {format:"รีวิวใช้งานยาวแบบเจาะลึก",hook:`ทดสอบใช้งานรูทีนจริงเป็นเวลา 1 เดือน ผลลัพธ์สมคำเล่าลือไหม`,execution:"แสดงขั้นตอนเตรียมผิว/จัดโต๊ะ/ใช้ของจริง อธิบายข้อดีข้อเสียอย่างตรงไปตรงมา ชี้เป้าผู้ที่ควรซื้อและใครที่ไม่เหมาะ",cta:"ดูสรุปเปรียบเทียบสินค้า"}
+      },
+      tiktokUrl: {
+        awareness: {format:"วิดีโอสั้นเน้น Hook 3 วินาที",hook:`อย่าเพิ่งตัดสินใจซื้อ ${product} ถ้ายังไม่ได้เช็ค 3 จุดนี้`,execution:"วิแรกเปิดด้วยคำเตือนท้าทาย, วินาทีที่สี่ชี้เป้าปัญหา, วินาทีที่สิบแสดงทางออกรวดเร็ว, จบด้วยการบอกให้กดติดตาม",cta:"กดติดตามเพื่อดูเทคนิคต่อ"},
+        review: {format:"คลิปทดลองป้ายยาด่วน",hook:`ลองใช้จริงตัวดังให้ดู จะได้ไม่ต้องเดาเองว่าจะเวิร์กไหม`,execution:"ซูมเนื้อสัมผัสหรือรายละเอียดสินค้าโคลสอัพ ถ่ายสีหน้ารีแอคชันจริง ชี้จุดเด่นที่แตกต่างเพียงข้อเดียวเพื่อความเร็วในการรับชม",cta:"บันทึกคลิปนี้ไว้เช็คภายหลัง"},
+        conversion: {format:"คลิปรีวิวแนบตะกร้าสินค้า",hook:`ถ้าคุณเจอปัญหานี้อยู่ ให้เริ่มแก้ด้วยชิ้นนี้เป็นชิ้นแรก`,execution:"หยิบปัญหาที่พบบ่อยมาโชว์ในคลิป สาธิตวิธีใช้สั้นๆ เผยราคา/สิทธิพิเศษ และชี้เป้าไปที่ปุ่มตะกร้าหน้าจอ",cta:"กดสั่งซื้อที่ตะกร้าเหลือง/ส้ม"},
+        live: {format:"ไลฟ์สดคอมเมิร์ซป้ายยา",hook:`สาธิตของจริงพร้อมเคลียร์ข้อข้องใจสดๆ กลางไลฟ์`,execution:"ใช้ครีเอเตอร์ที่มีพลังล้นหลามมาพรีเซนต์สด สาธิตวิธีใช้ ตอบคำถามคอมเมนต์สดๆ อัดของแถมจำกัดเวลาเพื่อเร่งยอดขาย",cta:"กดเข้ามาร่วมชมไลฟ์สด"}
+      },
+      instagramUrl: {
+        awareness: {format:"คลิปสั้น Reels สไตล์คุมโทน",hook:`จัดรูทีนไลฟ์สไตล์ที่ง่าย ดูดี และทำตามได้ทุกวัน`,execution:"ถ่ายภาพมุมกล้องมินิมอล แสงสวยงาม โชว์เทกซ์เจอร์/ดีไซน์เรียบหรู เล่าเรื่องผ่านความรู้สึกและเพลงกระแส",cta:"บันทึกวิดีโอ Reels นี้"},
+        trust: {format:"โพสต์ภาพสไลด์ Carousel",hook:`สิ่งที่ต้องเช็คให้ชัวร์ก่อนเอาสิ่งนี้เข้ามาในชีวิตคุณ`,execution:"สรุปสไลด์ทีละหน้าอธิบายปัญหา ส่วนผสมเด่น ข้อมูลรับรองความปลอดภัย ความเห็นครีเอเตอร์ และ FAQ สรุป",cta:"แชร์โพสต์นี้ให้เพื่อนของคุณ"},
+        review: {format:"รีวิวผ่านสตอรี่และ Reels",hook:`รีวิวใช้งานจริงจากครีเอเตอร์ใน 30 วินาที`,execution:"โชว์ภาพสไตล์ OOTD หรือสภาพผิวสัมผัสจริง บอกเล่าความรู้สึกและผลสรุปข้อดีแบบสั้นกระชับเข้าใจง่าย",cta:"บันทึกเช็คลิสต์แต่งบ้าน/แต่งตัว"},
+        conversion: {format:"สตอรี่ผูกสติกเกอร์ลิงก์สั่งซื้อ",hook:`อยากเริ่มลองรูทีนแบบในคลิปใช่ไหม? เริ่มต้นกดตรงนี้ได้เลย`,execution:"ลงรูปผลลัพธ์จริงแนบข้อความยืนยันความพึงพอใจ แปะสติกเกอร์ลิงก์ปุ่มกดไปหน้าสินค้าบนสตอรี่",cta:"กดที่สติกเกอร์เพื่อสั่งซื้อ"}
+      },
+      xUrl: {
+        awareness: {format:"เธรดโพสต์ท้าทายความคิด",hook:`ข้อมูลจริงเกี่ยวกับ ${product} ที่ไม่มีใครกล้าบอกคุณ`,execution:"เขียนโพสต์สั้นๆ เน้นข้อความเปรียบเทียบที่กระตุกความคิดคนอ่าน และคอยตามสังเกตสถิติความเห็นตอบกลับ",cta:"คอมเมนต์บอกประเด็นของคุณ"},
+        trust: {format:"เธรดมัดรวมข้อสงสัยในคอมมูนิตี้",hook:`ประเด็นที่คนมักเข้าใจผิดเกี่ยวกับ ${product} ก่อนลองใช้`,execution:"นำข้อโต้แย้งใน X มารวบรวมชี้แจงทีละประเด็นแบบกระชับ อัปเดตข้อมูลเป็นข้อๆ ชวนให้แชร์แบ่งปัน",cta:"รีทวีตข้อมูลที่เพิ่งอัปเดต"}
+      }
+    }
+  };
+  
+  return plans[lang]?.[platformId]?.[stageKey] || {
+    format: lang === "th" ? "เนื้อหาทดลองช่องทาง" : "Platform content test",
+    hook: lang === "th" ? "ทดสอบข้อความแบรนด์" : "Test the core brand message.",
+    execution: lang === "th" ? "ประเมินและปรับสไตล์ให้สอดคล้องกับธรรมชาติช่องทาง" : "Extract native platform signals and adapt content.",
+    cta: lang === "th" ? "ดูข้อมูลแบรนด์" : "Review response"
+  };
 }
 
 function stageCard(platform, stageKey, list, stepNumber, totalSteps){
   const stage = stageConfig()[stageKey];
   const plan = stageContentPlan(platform.id, stageKey);
   const creator = creatorForStage(platform.id, stageKey, list);
-  const creatorLink = creator ? `<a href="${creator.url}" target="_blank" rel="noopener">@${creator.u}</a>` : "Expand creator pool";
-  const roleLabel = creator ? creator.roles.join(", ") : (stage.roles || []).join(", ");
+  const lang = getLang();
   
-  const stepText = stepNumber && totalSteps ? `<span class="mono" style="font-size:11px; color:var(--muted); font-weight:600;">Step ${stepNumber}/${totalSteps}</span>` : '';
+  const creatorLink = creator ? `<a href="${creator.url}" target="_blank" rel="noopener">@${creator.u}</a>` : (lang === "th" ? "ขยายรายชื่อครีเอเตอร์" : "Expand creator pool");
+  
+  const translatedRoles = creator ? creator.roles.map(r => roleTranslations[lang]?.[r] || r) : (stage.roles || []);
+  const roleLabel = translatedRoles.join(", ");
+  
+  const stepText = stepNumber && totalSteps 
+    ? `<span class="mono" style="font-size:11px; color:var(--muted); font-weight:600;">${lang === "th" ? `ขั้นตอน ${stepNumber}/${totalSteps}` : `Step ${stepNumber}/${totalSteps}`}</span>` 
+    : '';
+  
+  const formatLabel = lang === "th" ? "รูปแบบ" : "Format";
+  const execLabel = lang === "th" ? "การผลิต" : "Execution";
+  const ctaLabel = lang === "th" ? "ปุ่มนำทาง" : "CTA";
+  const suggestedLabel = lang === "th" ? "ครีเอเตอร์แนะนำ" : "Suggested creator";
   
   return `<div class="stage">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
@@ -1037,29 +1547,38 @@ function stageCard(platform, stageKey, list, stepNumber, totalSteps){
     </div>
     <p class="stage-goal">${stage.goal}</p>
     <dl class="stage-meta">
-      <div class="row"><dt>Format</dt><dd>${plan.format}</dd></div>
-      <div class="row"><dt>Execution</dt><dd>${plan.execution}</dd></div>
-      <div class="row"><dt>CTA</dt><dd>${plan.cta}</dd></div>
+      <div class="row"><dt>${formatLabel}</dt><dd>${plan.format}</dd></div>
+      <div class="row"><dt>${execLabel}</dt><dd>${plan.execution}</dd></div>
+      <div class="row"><dt>${ctaLabel}</dt><dd>${plan.cta}</dd></div>
     </dl>
     <p class="hook">${plan.hook}</p>
-    <div class="stage-creator"><span class="ktag">Suggested creator</span> ${creatorLink} <span class="small">· ${roleLabel}</span></div>
+    <div class="stage-creator"><span class="ktag">${suggestedLabel}</span> ${creatorLink} <span class="small">· ${roleLabel}</span></div>
   </div>`;
 }
 
 function planner(list){
   const ctx = getPlatformContext();
+  const lang = getLang();
+  
   const active = ctx.length ? ctx : platforms.slice(0,5).map(([id,name,signal])=>({id,name,signal,url:"demo"}));
-  return `<p class="board-intro">Each platform shows only the campaign stages that fit its native context. Website supports awareness, trust building, and review proof; TikTok can support awareness, review burst, conversion, and live commerce.</p>
+  
+  const boardIntro = lang === "th"
+    ? "แต่ละแพลตฟอร์มจะจัดแสดงเฉพาะขั้นตอนแคมเปญที่สอดคล้องกับพฤติกรรมผู้บริโภคของแพลตฟอร์มเป้าหมาย ตัวอย่างเช่น เว็บไซต์เน้นการสร้างความเชื่อมั่นและข้อมูลรีวิวประกอบ ขณะที่ช่องทาง TikTok จะรวบรวมตั้งแต่ขั้นสร้างการรับรู้ รีวิวป้ายยา ยอดขายแบบตะกร้าสินค้า และการไลฟ์สดPeakยอดขายชั่วคราว"
+    : "Each platform shows only the campaign stages that fit its native context. Website supports awareness, trust building, and review proof; TikTok can support awareness, review burst, conversion, and live commerce.";
+  
+  const sourceLabel = lang === "th" ? "แหล่งข้อมูล" : "Source";
+  
+  return `<p class="board-intro">${boardIntro}</p>
     ${active.map(p => {
       const meta = platformMeta[p.id] || {code:"?",key:"website"};
-      const src = p.url && p.url !== "demo" ? `<a href="${p.url}" target="_blank" rel="noopener">${p.url}</a>` : "demo context";
+      const src = p.url && p.url !== "demo" ? `<a href="${p.url}" target="_blank" rel="noopener">${p.url}</a>` : (lang === "th" ? "ข้อมูลบริบทจำลอง" : "demo context");
       
       const stagesAvailable = platformStageMatrix(p.id);
       
       return `<section class="platform-block">
         <header class="pb-head">
           <span class="pb-chip pchip-${meta.key}">${meta.code}</span>
-          <div><h3>${p.name}</h3><p class="pb-src">Source: ${src}</p></div>
+          <div><h3>${p.name}</h3><p class="pb-src">${sourceLabel}: ${src}</p></div>
         </header>
         <p class="pb-role">${analysisRole(p.id)}</p>
         <div class="stage-timeline-container">

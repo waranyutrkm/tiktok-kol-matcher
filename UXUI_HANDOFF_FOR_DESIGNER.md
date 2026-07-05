@@ -451,6 +451,9 @@ stageContentPlan(platformId, stageKey)
 stageCard(platform, stageKey, list, stepNumber, totalSteps)
 planner(list)
 showMode(id, btn)
+setLanguage(lang)
+toggleLanguage()
+getLang()
 ```
 
 Removed functions:
@@ -494,6 +497,8 @@ w-style
 w-performance
 w-commerce
 w-safety
+lang-btn
+lang-btn-text
 ```
 
 Do not rename them without updating JavaScript.
