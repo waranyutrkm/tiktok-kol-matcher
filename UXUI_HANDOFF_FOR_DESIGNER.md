@@ -429,6 +429,14 @@ Keep these functions unless there is a deliberate refactor:
 scrollToForm()
 getPlatformContext()
 runDemo()
+getWeights()
+updateWeightsDisplay()
+toggleTheme()
+updateThemeIcon()
+copyConsoleLink()
+loadStateFromUrl()
+exportCSV()
+exportJSON()
 score(c)
 matchCreators()
 renderInsight(list)
@@ -440,7 +448,7 @@ stageConfig()
 platformStageMatrix(platformId)
 creatorForStage(platformId, stageKey, list)
 stageContentPlan(platformId, stageKey)
-stageCard(platform, stageKey, list)
+stageCard(platform, stageKey, list, stepNumber, totalSteps)
 planner(list)
 showMode(id, btn)
 ```
@@ -476,6 +484,16 @@ insight
 contextBox
 quick
 planner
+theme-btn
+theme-btn-icon
+theme-btn-text
+w-relevance
+w-audience
+w-objective
+w-style
+w-performance
+w-commerce
+w-safety
 ```
 
 Do not rename them without updating JavaScript.
@@ -546,6 +564,10 @@ GitHub Pages will update automatically after push.
 9. Confirm creator links open in a new tab.
 10. Confirm the synthetic data note remains visible.
 11. Confirm there are no JavaScript console errors.
+12. Confirm Dark Mode / Light Mode toggle correctly transitions visual variables and saves to localStorage.
+13. Confirm adjusting Custom Weight sliders updates creator scores and rank order dynamically in real-time.
+14. Confirm Copy Link creates a shareable URL containing base64 state which successfully loads and runs the console.
+15. Confirm Export Shortlist (CSV) and Export Plan (JSON) download files containing the current console data.
 
 Command-line syntax check:
 
