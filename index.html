@@ -201,7 +201,7 @@ function analysisExtraction(platformId){
   };
   return extraction[platformId] || ["Posts", "Captions", "Comments", "Engagement signals", "Narrative patterns"];
 }
-function recommendedCreatorRole(platformId, list){
+function recommendedCreator(platformId, list){
   const roleByPlatform = {
     webUrl: ["educator", "expert", "reviewer"],
     facebookUrl: ["community", "reviewer", "educator"],
@@ -211,26 +211,107 @@ function recommendedCreatorRole(platformId, list){
     xUrl: ["expert", "educator", "community"]
   };
   const preferred = roleByPlatform[platformId] || [];
-  const match = list.find(c => c.roles.some(r => preferred.includes(r)) || c.commerce.some(r => preferred.includes(r))) || list[0];
-  return match ? `<a href="${match.url}" target="_blank">@${match.u}</a> - ${match.roles.join(", ")}` : "Expand the creator pool for this platform.";
+  return list.find(c => c.roles.some(r => preferred.includes(r)) || c.commerce.some(r => preferred.includes(r))) || list[0];
+}
+function stageForPlatform(platformId){
+  return {
+    webUrl: "Conversion support",
+    facebookUrl: "Trust / community",
+    youtubeUrl: "Consideration / education",
+    tiktokUrl: "Awareness + conversion",
+    instagramUrl: "Awareness / lifestyle proof",
+    xUrl: "Risk and conversation monitoring"
+  }[platformId] || "Context support";
+}
+function contentPlan(platformId){
+  const category = document.getElementById("category").value;
+  const objective = document.getElementById("objective").value;
+  const product = category === "beauty" ? "sensitive-skin skincare" : `${category} offer`;
+  const plans = {
+    webUrl: {
+      format: "Landing-page proof block",
+      hook: `Why this ${product} is different, who it is for, and what proof supports the claim.`,
+      sample: "Turn the strongest creator review into a landing-page module: problem, product proof, before/after evidence, creator quote, and shop CTA.",
+      cta: objective === "sales" ? "Shop the routine" : "Learn more"
+    },
+    facebookUrl: {
+      format: "Community trust post",
+      hook: `A practical story about a real pain point before using ${product}.`,
+      sample: "Use a longer caption that answers objections from comments: safety, price, how to use, expected timeline, and who should avoid it.",
+      cta: "Comment with your concern or save this checklist"
+    },
+    youtubeUrl: {
+      format: "Long-form explainer",
+      hook: `The complete guide to choosing ${product} without wasting money.`,
+      sample: "Structure the video as chapters: problem, ingredient/feature breakdown, comparison, routine/demo, mistakes, final recommendation.",
+      cta: "Download the checklist or visit the product page"
+    },
+    tiktokUrl: {
+      format: "Short-form scene sequence",
+      hook: `Stop buying ${product} before checking these three signs.`,
+      sample: "Scene 1 hook, scene 2 problem close-up, scene 3 creator test, scene 4 proof/result, scene 5 direct CTA with affiliate/shop cue.",
+      cta: objective === "sales" ? "Tap product link or join live session" : "Follow for the full routine"
+    },
+    instagramUrl: {
+      format: "Reels + carousel proof",
+      hook: `A simple routine that looks clean, premium, and easy to repeat.`,
+      sample: "Create a reel for emotional lifestyle framing, then a carousel with product steps, visual proof, and creator quote.",
+      cta: "Save the routine and share to a friend"
+    },
+    xUrl: {
+      format: "Conversation and objection testing",
+      hook: `What people misunderstand about ${product}.`,
+      sample: "Post concise claims, monitor replies, capture objections, and feed those objections back into creator scripts and FAQ content.",
+      cta: "Reply with the concern you want tested"
+    }
+  };
+  return plans[platformId] || {format:"Content test", hook:"Test the core brand message.", sample:"Extract platform-specific signal and adapt creator content.", cta:"Review response"};
+}
+function planner(list){
+  const ctx = getPlatformContext();
+  const active = ctx.length ? ctx : platforms.slice(0,5).map(([id,name,signal])=>({id,name,signal,url:"demo"}));
+  return `<h3 style="margin-top:16px">Platform-specific campaign planner</h3>
+    <p class="small">Each campaign stage should have a platform-specific content example and a KOL whose native format fits that channel.</p>
+    <div class="grid2">
+      ${active.map(p => {
+        const plan = contentPlan(p.id);
+        const creator = recommendedCreator(p.id, list);
+        return `<div class="kol">
+          <h3>${stageForPlatform(p.id)} - ${p.name}</h3>
+          <p class="small"><strong>Content format:</strong> ${plan.format}</p>
+          <p><strong>Sample hook:</strong> ${plan.hook}</p>
+          <p class="small"><strong>Execution:</strong> ${plan.sample}</p>
+          <p class="small"><strong>CTA:</strong> ${plan.cta}</p>
+          <div class="tags">${analysisExtraction(p.id).slice(0,4).map(x => `<span class="tag">${x}</span>`).join("")}</div>
+          <p class="small" style="margin-top:10px"><strong>KOL:</strong> ${creator ? `<a href="${creator.url}" target="_blank">@${creator.u}</a> - ${creator.roles.join(", ")}` : "Expand creator pool"}</p>
+        </div>`;
+      }).join("")}
+    </div>`;
 }
 function industry(list){
   const ctx = getPlatformContext();
   if (!ctx.length) {
-    return `<h3 style="margin-top:16px">Platform context analysis</h3><div class="kol"><h3>No platform URLs entered</h3><p class="small">Add Website, Facebook, YouTube, TikTok, Instagram, or X links in Client Input. This tab will then show what the research layer should extract from each channel before recommending a KOL team.</p></div>`;
+    return `<h3 style="margin-top:16px">Platform context analysis</h3><div class="kol"><h3>No platform URLs entered</h3><p class="small">Add Website, Facebook, YouTube, TikTok, Instagram, or X links in Client Input. This tab will then show platform-specific content examples, extraction targets, and recommended KOL roles.</p></div>`;
   }
   return `<h3 style="margin-top:16px">Platform context analysis</h3>
-    <p class="small">Each platform is analyzed separately first. The system should extract scripts, transcripts, captions, comments, scene beats, CTAs, and engagement patterns before synthesizing a final creator recommendation.</p>
+    <p class="small">This is the planning output: each platform gets its own research targets, sample content idea, CTA, and KOL recommendation. In production, these examples should be generated from real scripts, transcripts, captions, comments, scene beats, and engagement patterns.</p>
     <div class="grid2">
-      ${ctx.map(p => `<div class="kol">
-        <h3>${p.name}</h3>
-        <p class="small"><strong>URL:</strong> ${p.url}</p>
-        <p>${analysisRole(p.id)}</p>
-        <div class="tags">${analysisExtraction(p.id).map(x => `<span class="tag">${x}</span>`).join("")}</div>
-        <p class="small" style="margin-top:10px"><strong>Suggested creator role:</strong> ${recommendedCreatorRole(p.id, list)}</p>
-      </div>`).join("")}
+      ${ctx.map(p => {
+        const plan = contentPlan(p.id);
+        const creator = recommendedCreator(p.id, list);
+        return `<div class="kol">
+          <h3>${p.name}</h3>
+          <p class="small"><strong>URL:</strong> ${p.url}</p>
+          <p>${analysisRole(p.id)}</p>
+          <p><strong>Sample content:</strong> ${plan.hook}</p>
+          <p class="small"><strong>Format:</strong> ${plan.format}</p>
+          <p class="small"><strong>CTA:</strong> ${plan.cta}</p>
+          <div class="tags">${analysisExtraction(p.id).map(x => `<span class="tag">${x}</span>`).join("")}</div>
+          <p class="small" style="margin-top:10px"><strong>Recommended KOL:</strong> ${creator ? `<a href="${creator.url}" target="_blank">@${creator.u}</a> - ${creator.roles.join(", ")}` : "Expand creator pool"}</p>
+        </div>`;
+      }).join("")}
     </div>
-    <div class="note">Production flow: collect platform content -> transcribe video/audio -> split into scenes -> classify hooks, objections, proof, CTA, and sentiment -> match creator storytelling style to the channel that matters most for the campaign.</div>`;
+    <div class="note">Production flow: collect platform content -> transcribe video/audio -> split into scenes -> classify hooks, objections, proof, CTA, and sentiment -> generate platform-specific content examples -> match creator storytelling style to each campaign stage.</div>`;
 }
 function showMode(id,btn){["quick","planner","industry"].forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id));document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));btn.classList.add("active");}
 </script>
